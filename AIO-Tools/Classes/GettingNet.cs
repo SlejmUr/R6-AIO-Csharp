@@ -232,7 +232,7 @@ namespace AIO_Tools.Classes
                 WebClient webclient = new WebClient();
                 Stream stream = webclient.OpenRead(version);
                 StreamReader reader = new StreamReader(stream);
-                string content = reader.ReadToEnd();
+                string content = reader.ReadLine();
                 return content;
 
             }
