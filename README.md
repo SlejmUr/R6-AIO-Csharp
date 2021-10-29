@@ -35,34 +35,43 @@ I am still learning C# to make this Tool more useful and unique.
 Short words for comments and forms
 
 ### MainMenu
+![MainMenu Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/MainMenu.png?raw=true)\
 MainMenu things
 
 ### All Manifest
-
+![All Manifest Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/All-Manifest.png?raw=true)\
 All-manifest things
 
 ### Extra
+![Extra Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/Extra.png?raw=true)\
 Extra's things
 
 ### Faq Info
+![Faq Info Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/FAQ-Info.png?raw=true)\
 Faqinfo form
 
 ### Loading
+![Loading Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/Loading.png?raw=true)\
 Loading form
 
 ### Loads
+![Loads Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/Loads.png?raw=true)\
 Loads form
 
 ### MBoxDef
+![MBoxDef Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/MBoxDef.png?raw=true)\
 MessageBoxDefault
 
 ### More Info
+![More Info Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/MoreINFO.png?raw=true)\
 More info form
 
 ### Notes
+![Notes Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/Notes.png?raw=true)\
 Notes form
 
 ### Settings
+![Settings Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/Settings.png?raw=true)\
 Settings form
 
 
