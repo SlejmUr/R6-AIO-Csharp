@@ -77,6 +77,9 @@ Settings form
 
 ## Content difference
 Tell whats the difference between mu,event,shey,released
+There is what the difference
+[Content difference](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/ContentDifference.txt)\
+ss
 
 ### Switching On Main
 How, and why recommended
