@@ -110,7 +110,7 @@ namespace AIO_Tools
         private void ChangeSelectionY2(object sender, EventArgs e)
         {
             SeasonContent = 2;
-            YearSelect("velvetshell", "health", "bloodorchid", "whitenoise", new[] { "Velvet Shell", "Health", "Blood Orhid", "White Noise" });
+            YearSelect("velvetshell", "health", "bloodorchid", "whitenoise", new[] { "Velvet Shell", "Health", "Blood Orchid", "White Noise" });
             Logging.WriteLog("Selected Y" + SeasonContent);
         }
         private void ChangeSelectionY3(object sender, EventArgs e)
