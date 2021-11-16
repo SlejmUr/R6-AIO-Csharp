@@ -20,8 +20,8 @@ namespace AIO_Tools
         private int SeasonContent = 1;
         private int VersionContent = 1;
         //ExtraDB integration
-        private static readonly string extractPath = Directory.GetCurrentDirectory();
-        private static readonly string cs = @"URI=file:" + extractPath + "\\Data\\DataBase\\datas.db";
+        private Utils utils = new Utils();
+        private static readonly string datasdb = utils.datasDB
         //importing from other class
         private Download dw = new Download();
         private INI ini = new INI();
@@ -617,7 +617,7 @@ namespace AIO_Tools
             string manifest_sku;
             //Get manifest content, foldername, desc
             //SELECT T1.manifest,T2.pickfoldername,T2.pickgamename FROM  ultimateDepot AS T1 LEFT JOIN pick as T2 ON T2.id = T1.pick_ID WHERE T2.pickname LIKE @pickname AND(T1.depotname LIKE \"Content\" OR T1.depotname LIKE @sku")
-            using var con = new SQLiteConnection(cs);
+            using var con = new SQLiteConnection(datasdb);
             con.Open();
             using var cmd = new SQLiteCommand(con);
             cmd.CommandText = "SELECT T1.manifest,T2.pickfoldername,T2.pickgetnet FROM ultimateDepot AS T1 LEFT JOIN pick as T2 ON T2.id = T1.pick_ID WHERE T2.pickname LIKE @pickname AND(T1.depotname LIKE \"Content\" OR T1.depotid LIKE @sku)";
@@ -669,7 +669,7 @@ namespace AIO_Tools
             string Version;
             string Date;
             //Get manifest content, foldername, desc
-            using var con = new SQLiteConnection(cs);
+            using var con = new SQLiteConnection(datasdb);
             con.Open();
             using var cmd = new SQLiteCommand(con);
             cmd.CommandText = "SELECT DB_Version,DB_Date FROM DB_Version";
