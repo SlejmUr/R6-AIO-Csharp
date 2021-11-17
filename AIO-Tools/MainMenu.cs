@@ -622,9 +622,9 @@ namespace AIO_Tools
             string manifest_sku;
             //Get manifest content, foldername, desc
             //SELECT T1.manifest,T2.pickfoldername,T2.pickgamename FROM  ultimateDepot AS T1 LEFT JOIN pick as T2 ON T2.id = T1.pick_ID WHERE T2.pickname LIKE @pickname AND(T1.depotname LIKE \"Content\" OR T1.depotname LIKE @sku")
-            using var sqlconnection  = new SQLiteConnection(datasdb);
-            sqlconnection .Open();
-            using var cmd = new SQLiteCommand(sqlconnection );
+            using var sqlconnection = new SQLiteConnection(datasdb);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT T1.manifest,T2.pickfoldername,T2.pickgetnet FROM ultimateDepot AS T1 LEFT JOIN pick as T2 ON T2.id = T1.pick_ID WHERE T2.pickname LIKE @pickname AND(T1.depotname LIKE \"Content\" OR T1.depotid LIKE @sku)";
             cmd.Parameters.AddWithValue("@pickname", PickName);
             cmd.Parameters.AddWithValue("@sku", dw.GetSDKContent().ToString());
@@ -674,9 +674,9 @@ namespace AIO_Tools
             string Version;
             string Date;
             //Get manifest content, foldername, desc
-            using var sqlconnection  = new SQLiteConnection(datasdb);
-            sqlconnection .Open();
-            using var cmd = new SQLiteCommand(sqlconnection );
+            using var sqlconnection = new SQLiteConnection(datasdb);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT DB_Version,DB_Date FROM DB_Version";
             cmd.Prepare();
             using SQLiteDataReader rdr = cmd.ExecuteReader();
