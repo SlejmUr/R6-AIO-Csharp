@@ -14,13 +14,15 @@ namespace AIO_Tools.Forms
         {
             InitializeComponent();
         }
-
+        //making strings
         private string DepotID;
         private string ManifestID;
         private string AppID;
         private string Date;
-        private static readonly string currentlypath = Directory.GetCurrentDirectory();
-        private static readonly string cs = @"URI=file:" + currentlypath + "\\Data\\DataBase\\all.db";
+        //Import from AIO.Classes
+        private Utils utils = new Utils();
+        //DB integration
+        private static readonly string datasdb = utils.allDB
 
         private void AllManifest_Load(object sender, EventArgs e)
         {
@@ -54,9 +56,9 @@ namespace AIO_Tools.Forms
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
             string depotname;
-            using var con = new SQLiteConnection(cs);
-            con.Open();
-            using var cmd = new SQLiteCommand(con);
+            using var sqlconnection = new SQLiteConnection(datasdb);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT depotname FROM allDepot GROUP BY allDepot.depotname ORDER BY allDepot.depotname ASC";
             cmd.Prepare();
             using SQLiteDataReader rdr = cmd.ExecuteReader();
@@ -73,9 +75,9 @@ namespace AIO_Tools.Forms
         {
             comboBox2.Items.Clear();
             string manifest;
-            using var con = new SQLiteConnection(cs);
-            con.Open();
-            using var cmd = new SQLiteCommand(con);
+            using var sqlconnection = new SQLiteConnection(datasdb);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT manifest FROM allDepot WHERE allDepot.depotname LIKE @name";
             cmd.Parameters.AddWithValue("@name", Name);
             cmd.Prepare();
@@ -94,9 +96,9 @@ namespace AIO_Tools.Forms
         private void SelectedManifest_Changed(object sender, EventArgs e)
         {
             var pick = this.comboBox2.GetItemText(this.comboBox2.SelectedItem);
-            using var con = new SQLiteConnection(cs);
-            con.Open();
-            using var cmd = new SQLiteCommand(con);
+            using var sqlconnection = new SQLiteConnection(datasdb);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT manifest,depotid,appid,date FROM allDepot WHERE allDepot.manifest LIKE @pick";
             cmd.Parameters.AddWithValue("@pick", pick);
             cmd.Prepare();
