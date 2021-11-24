@@ -24,7 +24,7 @@ namespace AIO_Tools
         private INI ini = new INI();
         private Utils utils = new Utils();
         //ExtraDB integration
-        private static readonly string datasdb = utils.datasDB
+        private static readonly string datasdb = utils.datasDB;
 
 
         public MainMenu()
@@ -701,6 +701,7 @@ namespace AIO_Tools
             {
                 Logging.SpecificLog("Turned ON (Currently nothing new)", "NewFeatures");
                 Logging.WriteLog(ini.Testing().ToString());
+                Logging.DebugLog(ini.Testing().ToString(),"NewFeatures");
             }
         }
         //UI_Mode
