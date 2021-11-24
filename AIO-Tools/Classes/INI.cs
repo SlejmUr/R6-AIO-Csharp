@@ -20,7 +20,7 @@ namespace AIO_Tools.Classes
         public string GetUserName()
         {
             var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
+            IniData data = parserdata.ReadFile(ConfigINI);
             UserName = data["User"]["name"];
             return UserName;
         }
@@ -28,15 +28,15 @@ namespace AIO_Tools.Classes
         public static void SetFolder(string _folder)
         {
             var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
+            IniData data = parserdata.ReadFile(ConfigINI);
             data["User"]["savefolder"] = _folder;
-            parserdata.WriteFile("Data\\Config\\Config.ini", data);
+            parserdata.WriteFile(ConfigINI, data);
         }
         public static string Folder;
         public string GetFolder()
         {
             var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
+            IniData data = parserdata.ReadFile(ConfigINI);
             Folder = data["User"]["savefolder"];
             return Folder;
         }
@@ -45,7 +45,7 @@ namespace AIO_Tools.Classes
         public bool GetSubPaths()
         {
             var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
+            IniData data = parserdata.ReadFile(ConfigINI);
             string SubPathsSTR = data["GeneralConfiguration"]["SubPaths"];
             SubPaths = bool.Parse(SubPathsSTR);
             return SubPaths;
@@ -55,7 +55,7 @@ namespace AIO_Tools.Classes
         public bool GetSavePath()
         {
             var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
+            IniData data = parserdata.ReadFile(ConfigINI);
             string SavePathSTR = data["GeneralConfiguration"]["SavePath"];
             SavePath = bool.Parse(SavePathSTR);
             return SavePath;
@@ -64,7 +64,7 @@ namespace AIO_Tools.Classes
         public bool GetNewFeature()
         {
             var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
+            IniData data = parserdata.ReadFile(ConfigINI);
             string NewFeatureStr = data["GeneralConfiguration"]["NewFeature"];
             bool NewFeature = bool.Parse(NewFeatureStr);
             return NewFeature;
@@ -73,7 +73,7 @@ namespace AIO_Tools.Classes
         public bool GetUI_MODE()
         {
             var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
+            IniData data = parserdata.ReadFile(ConfigINI);
             string UI_ModeStr = data["UI"]["lightmode"];
             bool UI_Mode = bool.Parse(UI_ModeStr);
             return UI_Mode;
@@ -81,9 +81,9 @@ namespace AIO_Tools.Classes
         public static void Set_tempdownloaded(string _tempdownloaded)
         {
             var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
+            IniData data = parserdata.ReadFile(ConfigINI);
             data["User"]["tempdownloaded"] = _tempdownloaded;
-            parserdata.WriteFile("Data\\Config\\Config.ini", data);
+            parserdata.WriteFile(ConfigINI, data);
         }
         public bool IsDebug()
         {
@@ -95,6 +95,11 @@ namespace AIO_Tools.Classes
         }
         #endregion
         #region Private //Testing
+        public string Testing()
+        {
+            string Test = GetFromINI(GeneralConfiguration,Debug);
+            return Test;
+        }                                  
         private string GetFromINI(string Category, string Name)
         {
             var parserdata = new FileIniDataParser();
