@@ -20,7 +20,7 @@ namespace AIO_Tools.Forms
         private string ManifestID;
         private string AppID;
         private Utils utils = new Utils();
-        private static readonly string datasdb = utils.datasDB
+        private static readonly string datasdb = utils.datasDB;
 
         private void Extra_Load(object sender, EventArgs e)
         {
