@@ -31,9 +31,16 @@ namespace AIO_Tools.Forms
         {
             string tmpVersion = Utils.Version;
             string webVersion = GettingNet.GetVersion();
-            if (tmpVersion != webVersion)
+            if (tmpVersion.StartsWith("DEV-"))
             {
-                Logging.SpecificLog("Version Missmatch! [Tool Version:" + tmpVersion +  " , Web Version: " + webVersion +  " ]", "Loading/Starting");
+                Loggin.DebugLog("DEV version! No support, only for testing","Loading/Starting");
+            }
+            else
+            {
+                if (tmpVersion != webVersion)
+                {
+                    Logging.SpecificLog("Version Missmatch! [Tool Version:" + tmpVersion +  " , Web Version: " + webVersion +  " ]", "Loading/Starting");
+                }
             }
         }
         #endregion
