@@ -22,7 +22,7 @@ namespace AIO_Tools.Forms
         //Import from AIO.Classes
         private Utils utils = new Utils();
         //DB integration
-        private static readonly string datasdb = utils.allDB
+        private static readonly string datasdb = utils.allDB;
 
         private void AllManifest_Load(object sender, EventArgs e)
         {
