@@ -700,6 +700,7 @@ namespace AIO_Tools
             else
             {
                 Logging.SpecificLog("Turned ON (Currently nothing new)", "NewFeatures");
+                Logging.WriteLog(ini.Testing().ToString());
             }
         }
         //UI_Mode
