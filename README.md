@@ -76,10 +76,22 @@ Settings form
 
 
 ## Content difference
-Tell whats the difference between mu,event,shey,released
-There is what the difference
-[Content difference](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/ContentDifference.txt)\
-ss
+Released:
+- Basicly is the released new season Manifest/Build
+
+MU:
+- Modding United Manifest/Build. Mostly used Zer0Bytes one. (Need to be has event file)
+
+Event:
+- If MU decided has 2 build , that's the second one.
+- Event files. Probably before any patch
+
+Shey:
+- Operation Throwback Manifest/Build, basicly old Zer0 one.
+
+
+There is what the difference between build:
+[Content difference](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/ContentDifference.txt)
 
 ### Switching On Main
 How, and why recommended
