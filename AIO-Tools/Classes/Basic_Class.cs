@@ -15,8 +15,8 @@ namespace AIO_Tools.Classes
         "CrimsonHeist","northstar","CrystalGuard","rainbowismagic",
         "evn_quarantine","Y6S3_EVN_MIX","Placeholder","Placeholder2","base"};
         public static string Version = "DEV-2021112X.X";
-        private static readonly string extractPath = Directory.GetCurrentDirectory();
-        public static readonly string datasDB = @"URI=file:" + extractPath + "\\Data\\DataBase\\datas.db";
-        public static readonly string allDB = @"URI=file:" + extractPath + "\\Data\\DataBase\\all.db";
+        private readonly string extractPath = Directory.GetCurrentDirectory();
+        public readonly string datasDB = @"URI=file:" + extractPath + "\\Data\\DataBase\\datas.db";
+        public readonly string allDB = @"URI=file:" + extractPath + "\\Data\\DataBase\\all.db";
     }
 }
