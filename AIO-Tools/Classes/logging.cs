@@ -29,7 +29,7 @@ namespace AIO_Tools
         public static void DebugLog(string strLog, string logType)
         {
             INI ini = new INI();
-            if (ini.IsDebug() == True)
+            if (ini.IsDebug() == true)
             {
                 FileInfo logFileInfo = new FileInfo(LoggingTXT);
                 DirectoryInfo logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
