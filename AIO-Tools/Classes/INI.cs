@@ -97,7 +97,7 @@ namespace AIO_Tools.Classes
         #region Private //Testing
         public string Testing()
         {
-            string Test = GetFromINI(GeneralConfiguration,Debug);
+            string Test = GetFromINI("GeneralConfiguration","Debug");
             return Test;
         }                                  
         private string GetFromINI(string Category, string Name)
