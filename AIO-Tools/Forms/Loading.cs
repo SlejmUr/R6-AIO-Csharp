@@ -33,7 +33,7 @@ namespace AIO_Tools.Forms
             string webVersion = GettingNet.GetVersion();
             if (tmpVersion.StartsWith("DEV-"))
             {
-                Loggin.DebugLog("DEV version! No support, only for testing","Loading/Starting");
+                Logging.DebugLog("DEV version! No support, only for testing","Loading/Starting");
             }
             else
             {
