@@ -19,10 +19,8 @@ namespace AIO_Tools.Forms
         private string ManifestID;
         private string AppID;
         private string Date;
-        //Import from AIO.Classes
-        private Utils utils = new Utils();
         //DB integration
-        private static readonly string datasdb = utils.allDB;
+        private static readonly string datasdb = Utils.allDB;
 
         private void AllManifest_Load(object sender, EventArgs e)
         {

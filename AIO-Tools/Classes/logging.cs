@@ -36,7 +36,7 @@ namespace AIO_Tools
                 if (!logDirInfo.Exists) logDirInfo.Create();
                 using FileStream fileStream = new FileStream(LoggingTXT, FileMode.Append);
                 using StreamWriter log = new StreamWriter(fileStream);
-                log.WriteLine("[DEBUG]" + DateTime.Now + " | " + logType + " | " + strLog);
+                log.WriteLine("[DEBUG] " + DateTime.Now + " | " + logType + " | " + strLog);
             }
         }
         #endregion

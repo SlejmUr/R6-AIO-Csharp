@@ -22,8 +22,8 @@ namespace AIO_Tools.Forms
         {
             formClose.Stop();
             formClose.Tick -= new EventHandler(FullyLoaded);
-            VersionCheck();
             GettingNet.Starting();
+            VersionCheck();
             this.Close();
         }
 

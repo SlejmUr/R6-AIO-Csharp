@@ -22,9 +22,8 @@ namespace AIO_Tools
         //importing from other class
         private Download dw = new Download();
         private INI ini = new INI();
-        private Utils utils = new Utils();
         //ExtraDB integration
-        private static readonly string datasdb = utils.datasDB;
+        private static readonly string datasdb = Utils.datasDB;
 
 
         public MainMenu()
@@ -700,8 +699,6 @@ namespace AIO_Tools
             else
             {
                 Logging.SpecificLog("Turned ON (Currently nothing new)", "NewFeatures");
-                Logging.WriteLog(ini.Testing().ToString());
-                Logging.DebugLog(ini.Testing().ToString(),"NewFeatures");
             }
         }
         //UI_Mode
