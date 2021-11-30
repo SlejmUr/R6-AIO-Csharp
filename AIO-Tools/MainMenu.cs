@@ -251,7 +251,7 @@ namespace AIO_Tools
                 S3txt = "Event Mix";
                 S3IMG = "Y6S3_EVN_MIX";
             }
-            S4txt = "Placeholder";
+            S4txt = "High Calibre";
             S4IMG = "Placeholder";
             YearSelect(S1IMG, S2IMG, S3IMG, S4IMG, new[] { S1txt, S2txt, S3txt, S4txt });
             Logging.WriteLog("Selected Y" + SeasonContent);
