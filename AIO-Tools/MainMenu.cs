@@ -252,7 +252,7 @@ namespace AIO_Tools
                 S3IMG = "Y6S3_EVN_MIX";
             }
             S4txt = "High Calibre";
-            S4IMG = "Placeholder";
+            S4IMG = "highcalibre";
             YearSelect(S1IMG, S2IMG, S3IMG, S4IMG, new[] { S1txt, S2txt, S3txt, S4txt });
             Logging.WriteLog("Selected Y" + SeasonContent);
         }
@@ -579,10 +579,8 @@ namespace AIO_Tools
                     return;
                 case 6:
                     Logging.WriteLog("High Calibre Selected");
-                    operationDescription.Text = "High Calibre soon(TM)";
-                    //SeasonName = "High Calibre";
-                    //GetALL(SeasonName);
-                    //return;
+                    SeasonName = "High Calibre";
+                    GetALL(SeasonName);
                     return;
                 default:
                     operationDescription.Text = "No operation selected";
