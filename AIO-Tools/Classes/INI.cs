@@ -8,79 +8,74 @@ namespace AIO_Tools.Classes
         #region Config
         public static void SetUserName(string _username)
         {
-            var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
-            data["User"]["name"] = _username;
-            parserdata.WriteFile("Data\\Config\\Config.ini", data);
+            SetToINI("User", "name",_username);
         }
-        public static string UserName;
         public string GetUserName()
         {
-            var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
-            UserName = data["User"]["name"];
+            string UserName = GetFromINI("User", "name");
             return UserName;
         }
-
         public static void SetFolder(string _folder)
         {
-            var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
-            data["User"]["savefolder"] = _folder;
-            parserdata.WriteFile("Data\\Config\\Config.ini", data);
+            SetToINI("User", "savefolder", _folder);
         }
-        public static string Folder;
         public string GetFolder()
         {
-            var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
-            Folder = data["User"]["savefolder"];
+            string Folder = GetFromINI("User","savefolder");
             return Folder;
         }
-
-        public static bool SubPaths;
         public bool GetSubPaths()
         {
-            var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
-            string SubPathsSTR = data["GeneralConfiguration"]["SubPaths"];
-            SubPaths = bool.Parse(SubPathsSTR);
+            string SubPathsSTR = GetFromINI("GeneralConfiguration", "SubPaths");
+            bool SubPaths = bool.Parse(SubPathsSTR);
             return SubPaths;
         }
-
-        public static bool SavePath;
         public bool GetSavePath()
         {
-            var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
-            string SavePathSTR = data["GeneralConfiguration"]["SavePath"];
-            SavePath = bool.Parse(SavePathSTR);
+            string SavePathSTR = GetFromINI("GeneralConfiguration", "SavePath");
+            bool SavePath = bool.Parse(SavePathSTR);
             return SavePath;
         }
-
         public bool GetNewFeature()
         {
-            var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
-            string NewFeatureStr = data["GeneralConfiguration"]["NewFeature"];
+            string NewFeatureStr = GetFromINI("GeneralConfiguration", "NewFeature");
             bool NewFeature = bool.Parse(NewFeatureStr);
             return NewFeature;
         }
-
         public bool GetUI_MODE()
         {
-            var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
-            string UI_ModeStr = data["UI"]["lightmode"];
+            string UI_ModeStr = GetFromINI("UI", "lightmode");
             bool UI_Mode = bool.Parse(UI_ModeStr);
             return UI_Mode;
         }
         public static void Set_tempdownloaded(string _tempdownloaded)
         {
+            SetToINI("User", "tempdownloaded", _tempdownloaded);
+        }
+        public bool IsDebug()
+        {
+            string Debug_Str = GetFromINI("GeneralConfiguration", "Debug");
+            bool B_Debug = bool.Parse(Debug_Str);
+            return B_Debug;
+        }
+        #endregion
+        #region String
+        private static string ConfigINI = "Data\\Config\\Config.ini";
+        #endregion
+        #region Set/Get to INI
+        private string GetFromINI(string Category, string Name)
+        {
             var parserdata = new FileIniDataParser();
-            IniData data = parserdata.ReadFile("Data\\Config\\Config.ini");
-            data["User"]["tempdownloaded"] = _tempdownloaded;
-            parserdata.WriteFile("Data\\Config\\Config.ini", data);
+            IniData data = parserdata.ReadFile(ConfigINI);
+            string ReadedStuff = data[Category][Name];
+            return ReadedStuff;
+        }
+        private static void SetToINI(string Category, string Name,string Data)
+        {
+            var parserdata = new FileIniDataParser();
+            IniData data = parserdata.ReadFile(ConfigINI);
+            data[Category][Name] = Data;
+            parserdata.WriteFile(ConfigINI, data);
         }
         #endregion
     }

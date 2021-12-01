@@ -19,12 +19,12 @@ namespace AIO_Tools
         private string SDKName = "";
         private int SeasonContent = 1;
         private int VersionContent = 1;
-        //ExtraDB integration
-        private static readonly string extractPath = Directory.GetCurrentDirectory();
-        private static readonly string cs = @"URI=file:" + extractPath + "\\Data\\DataBase\\datas.db";
         //importing from other class
         private Download dw = new Download();
         private INI ini = new INI();
+        //ExtraDB integration
+        private static readonly string datasdb = Utils.datasDB;
+
 
         public MainMenu()
         {
@@ -251,8 +251,8 @@ namespace AIO_Tools
                 S3txt = "Event Mix";
                 S3IMG = "Y6S3_EVN_MIX";
             }
-            S4txt = "Placeholder";
-            S4IMG = "Placeholder";
+            S4txt = "High Calibre";
+            S4IMG = "highcalibre";
             YearSelect(S1IMG, S2IMG, S3IMG, S4IMG, new[] { S1txt, S2txt, S3txt, S4txt });
             Logging.WriteLog("Selected Y" + SeasonContent);
         }
@@ -578,7 +578,9 @@ namespace AIO_Tools
                     }
                     return;
                 case 6:
-                    operationDescription.Text = "High Calibre?";
+                    Logging.WriteLog("High Calibre Selected");
+                    SeasonName = "High Calibre";
+                    GetALL(SeasonName);
                     return;
                 default:
                     operationDescription.Text = "No operation selected";
@@ -617,9 +619,9 @@ namespace AIO_Tools
             string manifest_sku;
             //Get manifest content, foldername, desc
             //SELECT T1.manifest,T2.pickfoldername,T2.pickgamename FROM  ultimateDepot AS T1 LEFT JOIN pick as T2 ON T2.id = T1.pick_ID WHERE T2.pickname LIKE @pickname AND(T1.depotname LIKE \"Content\" OR T1.depotname LIKE @sku")
-            using var con = new SQLiteConnection(cs);
-            con.Open();
-            using var cmd = new SQLiteCommand(con);
+            using var sqlconnection = new SQLiteConnection(datasdb);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT T1.manifest,T2.pickfoldername,T2.pickgetnet FROM ultimateDepot AS T1 LEFT JOIN pick as T2 ON T2.id = T1.pick_ID WHERE T2.pickname LIKE @pickname AND(T1.depotname LIKE \"Content\" OR T1.depotid LIKE @sku)";
             cmd.Parameters.AddWithValue("@pickname", PickName);
             cmd.Parameters.AddWithValue("@sku", dw.GetSDKContent().ToString());
@@ -669,9 +671,9 @@ namespace AIO_Tools
             string Version;
             string Date;
             //Get manifest content, foldername, desc
-            using var con = new SQLiteConnection(cs);
-            con.Open();
-            using var cmd = new SQLiteCommand(con);
+            using var sqlconnection = new SQLiteConnection(datasdb);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT DB_Version,DB_Date FROM DB_Version";
             cmd.Prepare();
             using SQLiteDataReader rdr = cmd.ExecuteReader();

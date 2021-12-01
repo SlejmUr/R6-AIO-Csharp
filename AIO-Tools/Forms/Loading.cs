@@ -22,8 +22,8 @@ namespace AIO_Tools.Forms
         {
             formClose.Stop();
             formClose.Tick -= new EventHandler(FullyLoaded);
-            VersionCheck();
             GettingNet.Starting();
+            VersionCheck();
             this.Close();
         }
 
@@ -31,9 +31,16 @@ namespace AIO_Tools.Forms
         {
             string tmpVersion = Utils.Version;
             string webVersion = GettingNet.GetVersion();
-            if (tmpVersion != webVersion)
+            if (tmpVersion.StartsWith("DEV-"))
             {
-                Logging.SpecificLog("Version Missmatch! [Tool Version:" + tmpVersion +  " , Web Version: " + webVersion +  " ]", "Loading/Starting");
+                Logging.DebugLog("DEV version! No support, only for testing","Loading/Starting");
+            }
+            else
+            {
+                if (tmpVersion != webVersion)
+                {
+                    Logging.SpecificLog("Version Missmatch! [Tool Version:" + tmpVersion +  " , Web Version: " + webVersion +  " ]", "Loading/Starting");
+                }
             }
         }
         #endregion

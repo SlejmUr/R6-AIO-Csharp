@@ -87,17 +87,6 @@ namespace AIO_Tools.Forms
         private void CheckedFast(object sender, EventArgs e)
         {
             GettingNet.DLFast_Check(CheckBox_Fast.Checked);
-            if (CheckBox_Fast.Checked)
-            {
-                Logging.WriteLog("checked");
-                GettingNet.DLFast_Check(CheckBox_Fast.Checked);
-            }
-            else
-            {
-                Logging.WriteLog("not checked");
-
-            }
-
         }
         #endregion
         #region UI and loads

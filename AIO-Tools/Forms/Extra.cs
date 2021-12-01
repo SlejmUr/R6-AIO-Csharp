@@ -19,8 +19,7 @@ namespace AIO_Tools.Forms
         private string DepotID;
         private string ManifestID;
         private string AppID;
-        private static readonly string extractPath = Directory.GetCurrentDirectory();
-        private static readonly string cs = @"URI=file:" + extractPath + "\\Data\\DataBase\\datas.db";
+        private static readonly string datasdb = Utils.datasDB;
 
         private void Extra_Load(object sender, EventArgs e)
         {
@@ -52,11 +51,11 @@ namespace AIO_Tools.Forms
         private void FILLYear(string Glang)
         {
             comboBox2.Items.Clear();
-            using var con = new SQLiteConnection(cs);
+            using var sqlconnection = new SQLiteConnection(datasdb);
 
             string pickyear;
-            con.Open();
-            using var cmd = new SQLiteCommand(con);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT pickyear FROM ultimateDepot, pick WHERE ultimateDepot.depotdate = pick.pickdate AND ultimateDepot.depotname LIKE @lang AND upper(ultimateDepot.manifest) != \"X\" GROUP BY pick.pickyear";
             cmd.Parameters.AddWithValue("@lang", Glang);
             //cmd.Parameters.AddWithValue("@depotid", Depot);
@@ -75,9 +74,9 @@ namespace AIO_Tools.Forms
         {
             comboBox3.Items.Clear();
             string pickname;
-            using var con = new SQLiteConnection(cs);
-            con.Open();
-            using var cmd = new SQLiteCommand(con);
+            using var sqlconnection = new SQLiteConnection(datasdb);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT pickname FROM ultimateDepot, pick WHERE ultimateDepot.depotdate = pick.pickdate AND pick.pickyear LIKE @year AND upper(ultimateDepot.manifest) != \"X\" AND ultimateDepot.depotname LIKE @depotname GROUP BY pick.pickname ORDER BY pick.pickname ASC";
             cmd.Parameters.AddWithValue("@year", GYear);
             cmd.Parameters.AddWithValue("@depotname", lang_select);
@@ -96,9 +95,9 @@ namespace AIO_Tools.Forms
         {
             //Get Manifest/Depot from database
             var pick = this.comboBox3.GetItemText(this.comboBox3.SelectedItem);
-            using var con = new SQLiteConnection(cs);
-            con.Open();
-            using var cmd = new SQLiteCommand(con);
+            using var sqlconnection = new SQLiteConnection(datasdb);
+            sqlconnection.Open();
+            using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT manifest,depotid,appid FROM ultimateDepot, pick WHERE ultimateDepot.depotdate = pick.pickdate AND ultimateDepot.depotname LIKE @lang AND pick.pickname LIKE @name";
             cmd.Parameters.AddWithValue("@lang", lang_select);
             cmd.Parameters.AddWithValue("@name", pick);
