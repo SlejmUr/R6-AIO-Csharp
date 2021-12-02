@@ -131,14 +131,15 @@
 #A: Make sure you have .net installed, otherwise the app won't download the game
 
  Q: This tool is safe? Is it safe to enter my password?
-#A: Yes it is the tool uses steam DepotDownloader SourceCode: 
+#A: Yes it is, the tool uses SteamRE DepotDownloader SourceCode: 
 https://github.com/SteamRE/DepotDownloader
 
  Q: I'm getting errors while doing ________________
 #A: Check the servers complete FAQ or ask in the help channels (@SlejmUr to get help)
 
- Q: What plaza files i need to copy and paste to Operation?
-#A: Y1-Y2S3 PlazaBO, Y2S4-Y5S2 PlazaNew , Y5S3 LumaPlay. Y5S4 - Y6S2 Cplay, Y6S3 - ? UPCR1</value>
+ Q: What plaza files I need to copy and paste to Operation?
+#A: Y1-Y2S3 PlazaBO. Y2S4-Y5S2 PlazaNew. Y5S3 LumaPlay. Y5S4 - Y6S2 Cplay.
+    Y6S3 UPCR1 (UPCR2_Old the last Y6S3.3 update). Y6S4 UPCR2_NEW</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>1) Go to Settings, Enter your Steam legacy name in the textbox
