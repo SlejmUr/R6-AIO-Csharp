@@ -84,9 +84,7 @@ namespace AIO_Tools.Forms
                 while (rdr.Read())
                 {
                     manifest = rdr["manifest"].ToString();
-
                     comboBox2.Items.Add(manifest);
-
                 }
             }
         }
@@ -108,7 +106,7 @@ namespace AIO_Tools.Forms
                     DepotID = rdr["depotid"].ToString();
                     AppID = rdr["appid"].ToString();
                     Date = rdr["date"].ToString();
-
+                    //Date set to versionlabel
                     versiondate_label.Text = Date;
                 }
             }
@@ -124,7 +122,6 @@ namespace AIO_Tools.Forms
         {
             Close();
         }
-
         private void Download_Click(object sender, EventArgs e)
         {
             if (DepotID != null & ManifestID != null)
@@ -153,7 +150,6 @@ namespace AIO_Tools.Forms
                         Logging.PathTXT(folderDlg.SelectedPath);
                     }
                     Download.Downloading(1);
-                    //Download.Downloading();
                 }
             }
             else

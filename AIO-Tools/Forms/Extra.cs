@@ -51,14 +51,12 @@ namespace AIO_Tools.Forms
         private void FILLYear(string Glang)
         {
             comboBox2.Items.Clear();
-            using var sqlconnection = new SQLiteConnection(datasdb);
-
             string pickyear;
+            using var sqlconnection = new SQLiteConnection(datasdb);
             sqlconnection.Open();
             using var cmd = new SQLiteCommand(sqlconnection);
             cmd.CommandText = "SELECT pickyear FROM ultimateDepot, pick WHERE ultimateDepot.depotdate = pick.pickdate AND ultimateDepot.depotname LIKE @lang AND upper(ultimateDepot.manifest) != \"X\" GROUP BY pick.pickyear";
             cmd.Parameters.AddWithValue("@lang", Glang);
-            //cmd.Parameters.AddWithValue("@depotid", Depot);
             cmd.Prepare();
             using SQLiteDataReader rdr = cmd.ExecuteReader();
             {
@@ -103,7 +101,6 @@ namespace AIO_Tools.Forms
             cmd.Parameters.AddWithValue("@name", pick);
             cmd.Prepare();
             using SQLiteDataReader rdr = cmd.ExecuteReader();
-
             rdr.Read();
             ManifestID = rdr["manifest"].ToString();
             DepotID = rdr["depotid"].ToString();
@@ -167,7 +164,6 @@ namespace AIO_Tools.Forms
                         Logging.PathTXT(folderDlg.SelectedPath);
                     }
                     Download.Downloading(1);
-                    //Download.Downloading();
                 }
             }
             else

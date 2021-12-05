@@ -58,7 +58,7 @@ namespace AIO_Tools
             this.SettingsButton = new System.Windows.Forms.Button();
             this.DB_DateVersion = new System.Windows.Forms.Label();
             this.gettingcontent = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Year7_Label = new System.Windows.Forms.Label();
             this.Season_Box.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -417,7 +417,7 @@ namespace AIO_Tools
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(111, 13);
             this.VersionLabel.TabIndex = 77;
-            this.VersionLabel.Text = "Version : 20211101.0";
+            this.VersionLabel.Text = "Version : " + Classes.Utils.Version;
             // 
             // SettingsButton
             // 
@@ -456,18 +456,18 @@ namespace AIO_Tools
             this.gettingcontent.TabIndex = 79;
             this.gettingcontent.Text = "Getting Content";
             // 
-            // label1
+            // Year7_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 200);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "Year 7";
-            this.label1.Click += new System.EventHandler(this.ChangeSelectionY7);
+            this.Year7_Label.AutoSize = true;
+            this.Year7_Label.BackColor = System.Drawing.Color.Transparent;
+            this.Year7_Label.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Year7_Label.ForeColor = System.Drawing.Color.White;
+            this.Year7_Label.Location = new System.Drawing.Point(20, 200);
+            this.Year7_Label.Name = "Year7_Label";
+            this.Year7_Label.Size = new System.Drawing.Size(38, 15);
+            this.Year7_Label.TabIndex = 80;
+            this.Year7_Label.Text = "Year 7";
+            this.Year7_Label.Click += new System.EventHandler(this.ChangeSelectionY7);
             // 
             // MainMenu
             // 
@@ -475,7 +475,7 @@ namespace AIO_Tools
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(749, 336);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Year7_Label);
             this.Controls.Add(this.gettingcontent);
             this.Controls.Add(this.DB_DateVersion);
             this.Controls.Add(this.VersionLabel);
@@ -538,6 +538,6 @@ namespace AIO_Tools
         private System.Windows.Forms.Label DB_DateVersion;
         public System.Windows.Forms.Label operationDescription;
         private System.Windows.Forms.Label gettingcontent;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Year7_Label;
     }
 }

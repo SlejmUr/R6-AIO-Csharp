@@ -55,7 +55,6 @@
             this.label5.Size = new System.Drawing.Size(344, 182);
             this.label5.TabIndex = 65;
             this.label5.Text = resources.GetString("label5.Text");
-            this.label5.Click += new System.EventHandler(this.Secret_Click);
             // 
             // OK_Button
             // 

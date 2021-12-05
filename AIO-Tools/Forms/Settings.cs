@@ -23,15 +23,14 @@ namespace AIO_Tools.Forms
             TextName = ini.GetUserName();
             NameBox.Text = TextName;
             dw.SetName(TextName);
-            INI.SetUserName(TextName);
         }
         private void Validate_Name()
         {
             //Set the name
-            dw.SetName(NameBox.Text);
             TextName = NameBox.Text;
+            dw.SetName(TextName);
             INI.SetUserName(TextName);
-            Logging.WriteLog(String.Format("Username validated as [{0}]", NameBox.Text));
+            Logging.WriteLog(String.Format("Username validated as [{0}]", TextName));
         }
         private void NameBox_TextChanged(object sender, EventArgs e)
         {

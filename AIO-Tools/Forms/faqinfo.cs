@@ -17,12 +17,6 @@ namespace AIO_Tools
             Hide();
             Close();
         }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("A-X-O-L-O-T-L, my time has come to burn! I invoke the ancient power that I may return!");
-        }
-
         private void faqinfo_Load(object sender, EventArgs e)
         {
             UI_MODE();

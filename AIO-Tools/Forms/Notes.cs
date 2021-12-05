@@ -11,11 +11,6 @@ namespace AIO_Tools.Forms
         {
             InitializeComponent();
         }
-        private void Secret_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Well done! Remember: The Aperture Science Bring Your Daughter to Work Day is the perfect time to have her tested.");
-        }
-
         private void OK_Button_Click(object sender, EventArgs e)
         {
             Hide();
