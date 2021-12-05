@@ -97,6 +97,9 @@ namespace AIO_Tools
                 case 6:
                     ChangeSelectionY6(sender, e);
                     return;
+                case 7:
+                    ChangeSelectionY7(sender, e);
+                    return;
                 default:
                     break;
             }
@@ -253,6 +256,24 @@ namespace AIO_Tools
             }
             S4txt = "High Calibre";
             S4IMG = "highcalibre";
+            YearSelect(S1IMG, S2IMG, S3IMG, S4IMG, new[] { S1txt, S2txt, S3txt, S4txt });
+            Logging.WriteLog("Selected Y" + SeasonContent);
+        }
+        private void ChangeSelectionY7(object sender, EventArgs e)
+        {
+            SeasonContent = 7; //Not implemented yet.
+            string S1txt, S1IMG,
+    S2txt, S2IMG,
+    S3txt, S3IMG,
+    S4txt, S4IMG;
+            S1txt = "Placeholder1";
+            S1IMG = "Placeholder";
+            S2txt = "Placeholder2";
+            S2IMG = "Placeholder";
+            S3txt = "Placeholder3";
+            S3IMG = "Placeholder";
+            S4txt = "Placeholder4";
+            S4IMG = "Placeholder";
             YearSelect(S1IMG, S2IMG, S3IMG, S4IMG, new[] { S1txt, S2txt, S3txt, S4txt });
             Logging.WriteLog("Selected Y" + SeasonContent);
         }
@@ -763,33 +784,31 @@ namespace AIO_Tools
         }
         private void Content_Swap(object sender, MouseEventArgs e)
         {
+            operationDescription.Text = "Version Swapped, please re-select again :)";
             switch (VersionContent)
             {
+
                 case 1:
                     VersionContent = 2;
                     Content_Label.Text = "MU Content";
-                    operationDescription.Text = "Version Swapped, please re-select again :)";
                     Logging.WriteLog("Version Content Swapped");
                     ChangeSelectionYears(sender, e);
                     return;
                 case 2:
                     VersionContent = 3;
                     Content_Label.Text = "Event Content";
-                    operationDescription.Text = "Version Swapped, please re-select again :)";
                     Logging.WriteLog("Event Content Swapped");
                     ChangeSelectionYears(sender, e);
                     return;
                 case 3:
                     VersionContent = 4;
                     Content_Label.Text = "Shey Content";
-                    operationDescription.Text = "Version Swapped, please re-select again :)";
                     Logging.WriteLog("Shey Content Swapped");
                     ChangeSelectionYears(sender, e);
                     return;
                 case 4:
                     VersionContent = 1;
                     Content_Label.Text = "Released Content";
-                    operationDescription.Text = "Version Swapped, please re-select again :)";
                     Logging.WriteLog("Released Content Swapped");
                     ChangeSelectionYears(sender, e);
                     return;
@@ -857,14 +876,13 @@ namespace AIO_Tools
                 // Set download Patch
                 var Selected = folderDlg.SelectedPath + "\\" + SubFolder;
                 INI.Set_tempdownloaded(Selected);
+                Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                 if (CompOrNormal == "Compressed")
                 {
-                    Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                     CompDown();
                 }
                 if (CompOrNormal == "Normal")
                 {
-                    Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                     NormDown();
                 }
             }
@@ -884,14 +902,13 @@ namespace AIO_Tools
                 // Set download Patch
                 var Selected = folderDlg.SelectedPath;
                 INI.Set_tempdownloaded(Selected);
+                Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                 if (CompOrNormal == "Compressed")
                 {
-                    Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                     CompDown();
                 }
                 if (CompOrNormal == "Normal")
                 {
-                    Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                     NormDown();
                 }
             }
@@ -913,14 +930,13 @@ namespace AIO_Tools
                     // Set download Patch
                     INI.SetFolder(Selected);
                     INI.Set_tempdownloaded(Selected);
+                    Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                     if (CompOrNormal == "Compressed")
                     {
-                        Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                         CompDown();
                     }
                     if (CompOrNormal == "Normal")
                     {
-                        Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                         NormDown();
                     }
                 }
@@ -932,14 +948,13 @@ namespace AIO_Tools
             else
             {
                 INI.Set_tempdownloaded(ini.GetFolder());
+                Logging.SpecificLog(CompOrNormal, "DownloadStates");
                 if (CompOrNormal == "Compressed")
                 {
-                    Logging.SpecificLog(CompOrNormal, "DownloadStates");
                     CompDown();
                 }
                 if (CompOrNormal == "Normal")
                 {
-                    Logging.SpecificLog(CompOrNormal, "DownloadStates");
                     NormDown();
                 }
             }
@@ -958,14 +973,13 @@ namespace AIO_Tools
                     var Selected = folderDlg.SelectedPath + "\\" + SubFolder;
                     INI.SetFolder(Selected);
                     INI.Set_tempdownloaded(Selected);
+                    Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                     if (CompOrNormal == "Compressed")
                     {
-                        Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                         CompDown();
                     }
                     if (CompOrNormal == "Normal")
                     {
-                        Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                         NormDown();
                     }
                 }
@@ -978,14 +992,13 @@ namespace AIO_Tools
             {
                 var select = ini.GetFolder() + "\\" + SubFolder;
                 INI.Set_tempdownloaded(ini.GetFolder());
+                Logging.SpecificLog(CompOrNormal + " | " + select, "DownloadStates");
                 if (CompOrNormal == "Compressed")
                 {
-                    Logging.SpecificLog(CompOrNormal + " | " + select, "DownloadStates");
                     CompDown();
                 }
                 if (CompOrNormal == "Normal")
                 {
-                    Logging.SpecificLog(CompOrNormal + " | " + select, "DownloadStates");
                     NormDown();
                 }
             }

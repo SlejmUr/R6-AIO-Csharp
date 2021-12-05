@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace AIO_Tools.Forms
 {
-    public partial class Loads : Form
+    public partial class PictureLoader : Form
     {
         #region LoadAllPictures
         //Need this to be "Faster?" on the MainMenu
-        public Loads()
+        public PictureLoader()
         {
             InitializeComponent();
 

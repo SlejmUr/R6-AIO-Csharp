@@ -123,11 +123,11 @@
     <Compile Include="Forms\Loading.Designer.cs">
       <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Loads.cs">
+    <Compile Include="Forms\PictureLoader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Loads.Designer.cs">
-      <DependentUpon>Loads.cs</DependentUpon>
+    <Compile Include="Forms\PictureLoader.Designer.cs">
+      <DependentUpon>PictureLoader.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MoreINFO.cs">
       <SubType>Form</SubType>
@@ -180,8 +180,8 @@
     <EmbeddedResource Include="Forms\Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Loads.resx">
-      <DependentUpon>Loads.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PictureLoader.resx">
+      <DependentUpon>PictureLoader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MoreINFO.resx">
       <DependentUpon>MoreINFO.cs</DependentUpon>

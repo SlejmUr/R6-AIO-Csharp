@@ -1,7 +1,7 @@
 ﻿
 namespace AIO_Tools.Forms
 {
-    partial class Loads
+    partial class PictureLoader
     {
         /// <summary>
         /// Required designer variable.

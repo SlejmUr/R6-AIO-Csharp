@@ -14,7 +14,7 @@ namespace AIO_Tools
             //Start The Main Menu (form)
             Logging.WriteLog("AIO Tool Started");
             Application.Run(new Forms.Loading());
-            Application.Run(new Forms.Loads());
+            Application.Run(new Forms.PictureLoader());
             Application.Run(new MainMenu());
             Logging.WriteLog("AIO Tool Exited");
 
