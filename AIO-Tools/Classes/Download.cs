@@ -65,6 +65,15 @@ namespace AIO_Tools
         {
             _AppID = newappid;
         }
+        private static string _PlazaName;
+        public string GetPlazaName()
+        {
+            return _PlazaName;
+        }
+        public void SetPlazaName(string newplazaname)
+        {
+            _PlazaName = newplazaname;
+        }
         #endregion
         #region Downloading
         public static void Downloading(int Key)
@@ -90,6 +99,7 @@ namespace AIO_Tools
             string username = dw.GetName();
             string sdkcontent = dw.GetSDKContent();
             string AppID = dw.GetAppID();
+            string PlazaName = dw.GetPlazaName();
             string ChoosedKey;
             switch (Key)
             {
@@ -99,11 +109,11 @@ namespace AIO_Tools
                     return ChoosedKey;
                 case 2:
                     //ChoosedKey = "Normal";
-                    ChoosedKey = "Normal " + sdkcontent + " " + sdkmanifest + " 359551 " + manifestcontent + " " + username;
+                    ChoosedKey = "Normal " + sdkcontent + " " + sdkmanifest + " 359551 " + manifestcontent + " " + username + " " + PlazaName;
                     return ChoosedKey;
                 case 3:
                     //ChoosedKey = "Compressed";
-                    ChoosedKey = "Compressed " + sdkcontent + " " + sdkmanifest + " 359551 " + manifestcontent + " " + username + " f1.txt f2.txt";
+                    ChoosedKey = "Compressed " + sdkcontent + " " + sdkmanifest + " 359551 " + manifestcontent + " " + username + " f1.txt f2.txt " + PlazaName;
                     return ChoosedKey;
                 default:
                     return null;

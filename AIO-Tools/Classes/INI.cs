@@ -1,5 +1,7 @@
 ﻿using IniParser;
 using IniParser.Model;
+using IniParser.Model.Configuration;
+using IniParser.Parser;
 
 namespace AIO_Tools.Classes
 {
@@ -58,6 +60,25 @@ namespace AIO_Tools.Classes
             bool B_Debug = bool.Parse(Debug_Str);
             return B_Debug;
         }
+
+        public static void SetInstalledSeason_Path(string _SeasonName,string _Path)
+        {
+            SetToINI("InstalledSeasons", _SeasonName + "_Path", _Path);
+        }
+        public string GetInstalledSeason_Path(string _SeasonName)
+        {
+            string SeasonFolder = GetFromINI("InstalledSeasons", _SeasonName+ "_Path");
+            return SeasonFolder;
+        }
+        public static void SetInstalledSeason_I(string _SeasonName)
+        {
+            SetToINI("InstalledSeasons", _SeasonName, "Installed");
+        }
+        public string GetInstalledSeason_I(string _SeasonName)
+        {
+            string SeasonFolder = GetFromINI("InstalledSeasons", _SeasonName);
+            return SeasonFolder;
+        }
         #endregion
         #region String
         private static string ConfigINI = "Data\\Config\\Config.ini";
@@ -65,9 +86,17 @@ namespace AIO_Tools.Classes
         #region Set/Get to INI
         private string GetFromINI(string Category, string Name)
         {
+            //string out_value;
             var parserdata = new FileIniDataParser();
             IniData data = parserdata.ReadFile(ConfigINI);
+            //string formatted = string.Format("{0}.{1}", Category, Name);
+            //bool x = data.TryGetKey(formatted, out out_value);
+            //Logging.WriteLog("TryGetKey: " + x + " out: " + out_value + " form:" + formatted);
             string ReadedStuff = data[Category][Name];
+            if (string.IsNullOrEmpty(ReadedStuff))
+            {
+                return null;
+            }
             return ReadedStuff;
         }
         private static void SetToINI(string Category, string Name,string Data)

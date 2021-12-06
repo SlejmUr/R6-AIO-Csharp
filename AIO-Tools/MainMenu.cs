@@ -643,7 +643,7 @@ namespace AIO_Tools
             using var sqlconnection = new SQLiteConnection(datasdb);
             sqlconnection.Open();
             using var cmd = new SQLiteCommand(sqlconnection);
-            cmd.CommandText = "SELECT T1.manifest,T2.pickfoldername,T2.pickgetnet FROM ultimateDepot AS T1 LEFT JOIN pick as T2 ON T2.id = T1.pick_ID WHERE T2.pickname LIKE @pickname AND(T1.depotname LIKE \"Content\" OR T1.depotid LIKE @sku)";
+            cmd.CommandText = "SELECT T1.manifest,T2.pickfoldername,T2.pickgetnet,T2.pickcrack FROM ultimateDepot AS T1 LEFT JOIN pick as T2 ON T2.id = T1.pick_ID WHERE T2.pickname LIKE @pickname AND(T1.depotname LIKE \"Content\" OR T1.depotid LIKE @sku)";
             cmd.Parameters.AddWithValue("@pickname", PickName);
             cmd.Parameters.AddWithValue("@sku", dw.GetSDKContent().ToString());
             cmd.Prepare();
@@ -656,6 +656,7 @@ namespace AIO_Tools
                     s2[i] = rdr.GetValue(0).ToString();
                     SubFolder = rdr["pickfoldername"].ToString();
                     SDKName = rdr["pickgetnet"].ToString();
+                    dw.SetPlazaName(rdr["pickcrack"].ToString());
                     i++;
                 }
                 rdr.Close();
@@ -713,6 +714,7 @@ namespace AIO_Tools
         {
             if (ini.GetNewFeature() == false)
             {
+                Start_Gane.Hide();
                 //Logging.SpecificLog("Turned OFF", "NewFeatures");
             }
             else
@@ -756,6 +758,11 @@ namespace AIO_Tools
         {
             Forms.Settings Settings = new Forms.Settings();
             Settings.ShowDialog();
+        }
+        private void StartGameClicked(object sender, MouseEventArgs e)
+        {
+            Forms.StartingGame StartingGame = new Forms.StartingGame();
+            StartingGame.ShowDialog();
         }
         private void SwichSDKContent(object sender, MouseEventArgs e)
         {
@@ -1036,12 +1043,16 @@ namespace AIO_Tools
         {
             Logging.WriteLog("Compressed Download Started");
             Logging.PathTXT(ini.GetFolder());
+            INI.SetInstalledSeason_Path(SDKName,ini.GetFolder());
+            INI.SetInstalledSeason_I(SDKName);
             Download.Downloading(3);
         }
         public void NormDown()
         {
             Logging.WriteLog("Download Started");
             Logging.PathTXT(ini.GetFolder());
+            INI.SetInstalledSeason_Path(SDKName, ini.GetFolder());
+            INI.SetInstalledSeason_I(SDKName);
             Download.Downloading(2);
         }
         #endregion

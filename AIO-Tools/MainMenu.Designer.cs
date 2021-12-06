@@ -40,11 +40,6 @@ namespace AIO_Tools
             this.Season_4_Label = new System.Windows.Forms.Label();
             this.Season_2_Label = new System.Windows.Forms.Label();
             this.Season_1_Label = new System.Windows.Forms.Label();
-            this.Season_Special = new System.Windows.Forms.Button();
-            this.Season_2 = new System.Windows.Forms.Button();
-            this.Season_3 = new System.Windows.Forms.Button();
-            this.Season_4 = new System.Windows.Forms.Button();
-            this.Season_1 = new System.Windows.Forms.Button();
             this.operationDescription = new System.Windows.Forms.Label();
             this.Content_Label = new System.Windows.Forms.Label();
             this.Content_Button = new System.Windows.Forms.Button();
@@ -55,10 +50,16 @@ namespace AIO_Tools
             this.SwitchSDK = new System.Windows.Forms.Button();
             this.SKUlabel = new System.Windows.Forms.Label();
             this.VersionLabel = new System.Windows.Forms.Label();
-            this.SettingsButton = new System.Windows.Forms.Button();
             this.DB_DateVersion = new System.Windows.Forms.Label();
             this.gettingcontent = new System.Windows.Forms.Label();
             this.Year7_Label = new System.Windows.Forms.Label();
+            this.SettingsButton = new System.Windows.Forms.Button();
+            this.Season_Special = new System.Windows.Forms.Button();
+            this.Season_2 = new System.Windows.Forms.Button();
+            this.Season_3 = new System.Windows.Forms.Button();
+            this.Season_4 = new System.Windows.Forms.Button();
+            this.Season_1 = new System.Windows.Forms.Button();
+            this.Start_Gane = new System.Windows.Forms.Button();
             this.Season_Box.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,96 +201,6 @@ namespace AIO_Tools
             this.Season_1_Label.Text = "Season 1";
             this.Season_1_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Season_Special
-            // 
-            this.Season_Special.BackColor = System.Drawing.Color.Transparent;
-            this.Season_Special.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_Special.BackgroundImage")));
-            this.Season_Special.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Season_Special.FlatAppearance.BorderSize = 0;
-            this.Season_Special.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Season_Special.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Season_Special.ForeColor = System.Drawing.Color.Black;
-            this.Season_Special.Location = new System.Drawing.Point(375, 30);
-            this.Season_Special.Name = "Season_Special";
-            this.Season_Special.Size = new System.Drawing.Size(80, 55);
-            this.Season_Special.TabIndex = 52;
-            this.Season_Special.Text = " ";
-            this.Season_Special.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Season_Special.UseVisualStyleBackColor = false;
-            this.Season_Special.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeasonSpecial);
-            // 
-            // Season_2
-            // 
-            this.Season_2.BackColor = System.Drawing.Color.Transparent;
-            this.Season_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_2.BackgroundImage")));
-            this.Season_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Season_2.FlatAppearance.BorderSize = 0;
-            this.Season_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Season_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Season_2.ForeColor = System.Drawing.Color.Black;
-            this.Season_2.Location = new System.Drawing.Point(120, 30);
-            this.Season_2.Name = "Season_2";
-            this.Season_2.Size = new System.Drawing.Size(80, 55);
-            this.Season_2.TabIndex = 51;
-            this.Season_2.Text = " ";
-            this.Season_2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Season_2.UseVisualStyleBackColor = false;
-            this.Season_2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeason2);
-            // 
-            // Season_3
-            // 
-            this.Season_3.BackColor = System.Drawing.Color.Transparent;
-            this.Season_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_3.BackgroundImage")));
-            this.Season_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Season_3.FlatAppearance.BorderSize = 0;
-            this.Season_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Season_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Season_3.ForeColor = System.Drawing.Color.Black;
-            this.Season_3.Location = new System.Drawing.Point(205, 30);
-            this.Season_3.Name = "Season_3";
-            this.Season_3.Size = new System.Drawing.Size(80, 55);
-            this.Season_3.TabIndex = 50;
-            this.Season_3.Text = " ";
-            this.Season_3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Season_3.UseVisualStyleBackColor = false;
-            this.Season_3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeason3);
-            // 
-            // Season_4
-            // 
-            this.Season_4.BackColor = System.Drawing.Color.Transparent;
-            this.Season_4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_4.BackgroundImage")));
-            this.Season_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Season_4.FlatAppearance.BorderSize = 0;
-            this.Season_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Season_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Season_4.ForeColor = System.Drawing.Color.Black;
-            this.Season_4.Location = new System.Drawing.Point(290, 30);
-            this.Season_4.Name = "Season_4";
-            this.Season_4.Size = new System.Drawing.Size(80, 55);
-            this.Season_4.TabIndex = 49;
-            this.Season_4.Text = " ";
-            this.Season_4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Season_4.UseVisualStyleBackColor = false;
-            this.Season_4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeason4);
-            // 
-            // Season_1
-            // 
-            this.Season_1.BackColor = System.Drawing.Color.Transparent;
-            this.Season_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_1.BackgroundImage")));
-            this.Season_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Season_1.FlatAppearance.BorderSize = 0;
-            this.Season_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Season_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Season_1.ForeColor = System.Drawing.Color.Black;
-            this.Season_1.Location = new System.Drawing.Point(35, 30);
-            this.Season_1.Name = "Season_1";
-            this.Season_1.Size = new System.Drawing.Size(80, 55);
-            this.Season_1.TabIndex = 48;
-            this.Season_1.Text = " ";
-            this.Season_1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Season_1.UseVisualStyleBackColor = false;
-            this.Season_1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeason1);
-            // 
             // operationDescription
             // 
             this.operationDescription.AutoSize = true;
@@ -417,20 +328,7 @@ namespace AIO_Tools
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(111, 13);
             this.VersionLabel.TabIndex = 77;
-            this.VersionLabel.Text = "Version : " + Classes.Utils.Version;
-            // 
-            // SettingsButton
-            // 
-            this.SettingsButton.BackColor = System.Drawing.Color.Transparent;
-            this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SettingsButton.ForeColor = System.Drawing.Color.Transparent;
-            this.SettingsButton.Image = ((System.Drawing.Image)(resources.GetObject("SettingsButton.Image")));
-            this.SettingsButton.Location = new System.Drawing.Point(695, 15);
-            this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(35, 35);
-            this.SettingsButton.TabIndex = 68;
-            this.SettingsButton.UseVisualStyleBackColor = false;
-            this.SettingsButton.Click += new System.EventHandler(this.Settings_Click);
+            this.VersionLabel.Text = "Version: " + Classes.Utils.Version;
             // 
             // DB_DateVersion
             // 
@@ -469,12 +367,130 @@ namespace AIO_Tools
             this.Year7_Label.Text = "Year 7";
             this.Year7_Label.Click += new System.EventHandler(this.ChangeSelectionY7);
             // 
+            // SettingsButton
+            // 
+            this.SettingsButton.BackColor = System.Drawing.Color.Transparent;
+            this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SettingsButton.ForeColor = System.Drawing.Color.Transparent;
+            this.SettingsButton.Image = ((System.Drawing.Image)(resources.GetObject("SettingsButton.Image")));
+            this.SettingsButton.Location = new System.Drawing.Point(695, 15);
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.Size = new System.Drawing.Size(35, 35);
+            this.SettingsButton.TabIndex = 68;
+            this.SettingsButton.UseVisualStyleBackColor = false;
+            this.SettingsButton.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // Season_Special
+            // 
+            this.Season_Special.BackColor = System.Drawing.Color.Transparent;
+            this.Season_Special.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_Special.BackgroundImage")));
+            this.Season_Special.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Season_Special.FlatAppearance.BorderSize = 0;
+            this.Season_Special.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Season_Special.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Season_Special.ForeColor = System.Drawing.Color.Black;
+            this.Season_Special.Location = new System.Drawing.Point(375, 30);
+            this.Season_Special.Name = "Season_Special";
+            this.Season_Special.Size = new System.Drawing.Size(80, 55);
+            this.Season_Special.TabIndex = 52;
+            this.Season_Special.Text = " ";
+            this.Season_Special.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Season_Special.UseVisualStyleBackColor = false;
+            this.Season_Special.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeasonSpecial);
+            // 
+            // Season_2
+            // 
+            this.Season_2.BackColor = System.Drawing.Color.Transparent;
+            this.Season_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_2.BackgroundImage")));
+            this.Season_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Season_2.FlatAppearance.BorderSize = 0;
+            this.Season_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Season_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Season_2.ForeColor = System.Drawing.Color.Black;
+            this.Season_2.Location = new System.Drawing.Point(120, 30);
+            this.Season_2.Name = "Season_2";
+            this.Season_2.Size = new System.Drawing.Size(80, 55);
+            this.Season_2.TabIndex = 51;
+            this.Season_2.Text = " ";
+            this.Season_2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Season_2.UseVisualStyleBackColor = false;
+            this.Season_2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeason2);
+            // 
+            // Season_3
+            // 
+            this.Season_3.BackColor = System.Drawing.Color.Transparent;
+            this.Season_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_3.BackgroundImage")));
+            this.Season_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Season_3.FlatAppearance.BorderSize = 0;
+            this.Season_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Season_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Season_3.ForeColor = System.Drawing.Color.Black;
+            this.Season_3.Location = new System.Drawing.Point(205, 30);
+            this.Season_3.Name = "Season_3";
+            this.Season_3.Size = new System.Drawing.Size(80, 55);
+            this.Season_3.TabIndex = 50;
+            this.Season_3.Text = " ";
+            this.Season_3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Season_3.UseVisualStyleBackColor = false;
+            this.Season_3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeason3);
+            // 
+            // Season_4
+            // 
+            this.Season_4.BackColor = System.Drawing.Color.Transparent;
+            this.Season_4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_4.BackgroundImage")));
+            this.Season_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Season_4.FlatAppearance.BorderSize = 0;
+            this.Season_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Season_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Season_4.ForeColor = System.Drawing.Color.Black;
+            this.Season_4.Location = new System.Drawing.Point(290, 30);
+            this.Season_4.Name = "Season_4";
+            this.Season_4.Size = new System.Drawing.Size(80, 55);
+            this.Season_4.TabIndex = 49;
+            this.Season_4.Text = " ";
+            this.Season_4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Season_4.UseVisualStyleBackColor = false;
+            this.Season_4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeason4);
+            // 
+            // Season_1
+            // 
+            this.Season_1.BackColor = System.Drawing.Color.Transparent;
+            this.Season_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Season_1.BackgroundImage")));
+            this.Season_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Season_1.FlatAppearance.BorderSize = 0;
+            this.Season_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Season_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Season_1.ForeColor = System.Drawing.Color.Black;
+            this.Season_1.Location = new System.Drawing.Point(35, 30);
+            this.Season_1.Name = "Season_1";
+            this.Season_1.Size = new System.Drawing.Size(80, 55);
+            this.Season_1.TabIndex = 48;
+            this.Season_1.Text = " ";
+            this.Season_1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Season_1.UseVisualStyleBackColor = false;
+            this.Season_1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.SelectSeason1);
+            // 
+            // Start_Gane
+            // 
+            this.Start_Gane.BackColor = System.Drawing.Color.Transparent;
+            this.Start_Gane.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Start_Gane.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start_Gane.ForeColor = System.Drawing.Color.White;
+            this.Start_Gane.Location = new System.Drawing.Point(400, 295);
+            this.Start_Gane.Name = "Start_Gane";
+            this.Start_Gane.Size = new System.Drawing.Size(130, 25);
+            this.Start_Gane.TabIndex = 81;
+            this.Start_Gane.Text = "Start Game";
+            this.Start_Gane.UseVisualStyleBackColor = false;
+            this.Start_Gane.MouseClick += new System.Windows.Forms.MouseEventHandler(this.StartGameClicked);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(749, 336);
+            this.Controls.Add(this.Start_Gane);
             this.Controls.Add(this.Year7_Label);
             this.Controls.Add(this.gettingcontent);
             this.Controls.Add(this.DB_DateVersion);
@@ -539,5 +555,6 @@ namespace AIO_Tools
         public System.Windows.Forms.Label operationDescription;
         private System.Windows.Forms.Label gettingcontent;
         private System.Windows.Forms.Label Year7_Label;
+        private System.Windows.Forms.Button Start_Gane;
     }
 }
