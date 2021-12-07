@@ -168,22 +168,28 @@ namespace AIO_Tools.Classes
         }
         public static void Update_Download()
         {
-            if (File.Exists("Data\\Update\\AIO-Tools.exe"))
+            try
             {
-                File.Delete("Data\\Update\\AIO-Tools.exe");
+                if (File.Exists("Data\\Update\\AIO-Tools.exe"))
+                {
+                    File.Delete("Data\\Update\\AIO-Tools.exe");
+                }
             }
-            if (!File.Exists("Data\\Update\\AIO-Tools.exe"))
+            finally
             {
-                //Download
-                string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/raw/main/AIO-Tools.exe";
-                string filename = "AIO-Tools.exe";
-                WebClient myWebClient = new WebClient();
-                myWebClient.DownloadFile(Download, filename);
-                if (!Directory.Exists("Data\\Update")) { Directory.CreateDirectory("Data\\Update"); }
-                File.Move(filename, "Data\\Update\\" + filename);
-                Logging.WriteLog("Update Exe not Exist, Download");
-                Update_DL_Download();
-                Logging.WriteLog("Please update to new version");
+                if (!File.Exists("Data\\Update\\AIO-Tools.exe"))
+                {
+                    //Download
+                    string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/raw/main/AIO-Tools.exe";
+                    string filename = "AIO-Tools_New.exe";
+                    WebClient myWebClient = new WebClient();
+                    myWebClient.DownloadFile(Download, filename);
+                    if (!Directory.Exists("Data\\Update")) { Directory.CreateDirectory("Data\\Update"); }
+                    File.Move(filename, "Data\\Update\\AIO-Tools.exe");
+                    Logging.WriteLog("Update Exe not Exist, Download");
+                    Update_DL_Download();
+                    Logging.WriteLog("Please update to new version");
+                }
             }
         }
         public static void Update_DL_Download()

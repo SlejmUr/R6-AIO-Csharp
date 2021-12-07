@@ -34,13 +34,13 @@ namespace AIO_Tools.Forms
             string webVersion = GettingNet.GetVersion();
             if (tmpVersion.StartsWith("DEV-"))
             {
-                Logging.DebugLog("DEV version! No support, only for testing","Loading/Starting");
+                Logging.DebugLog("DEV version! No support, only for testing", "Loading/Starting");
             }
             else
             {
                 if (tmpVersion != webVersion)
                 {
-                    Logging.SpecificLog("Version Missmatch! [Tool Version:" + tmpVersion +  " , Web Version: " + webVersion +  " ]", "Loading/Starting");
+                    Logging.SpecificLog("Version Missmatch! [Tool Version:" + tmpVersion + " , Web Version: " + webVersion + " ]", "Loading/Starting");
                     GettingNet.Update_Download();
                     // Mbox pop up
                     MBoxDef msgb = new MBoxDef();

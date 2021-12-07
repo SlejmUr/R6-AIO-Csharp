@@ -3,7 +3,6 @@ using System;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace AIO_Tools
@@ -762,7 +761,7 @@ namespace AIO_Tools
         private void StartGameClicked(object sender, MouseEventArgs e)
         {
             Forms.StartingGame StartingGame = new Forms.StartingGame();
-            StartingGame.ShowDialog();
+            StartingGame.Show();
         }
         private void SwichSDKContent(object sender, MouseEventArgs e)
         {
@@ -978,7 +977,7 @@ namespace AIO_Tools
                 {
                     // Set download Patch
                     var Selected = folderDlg.SelectedPath + "\\" + SubFolder;
-                    INI.SetFolder(Selected);
+                    INI.SetFolder(folderDlg.SelectedPath);
                     INI.Set_tempdownloaded(Selected);
                     Logging.SpecificLog(CompOrNormal + " | " + Selected, "DownloadStates");
                     if (CompOrNormal == "Compressed")
@@ -998,7 +997,7 @@ namespace AIO_Tools
             else
             {
                 var select = ini.GetFolder() + "\\" + SubFolder;
-                INI.Set_tempdownloaded(ini.GetFolder());
+                INI.Set_tempdownloaded(select);
                 Logging.SpecificLog(CompOrNormal + " | " + select, "DownloadStates");
                 if (CompOrNormal == "Compressed")
                 {
@@ -1042,16 +1041,16 @@ namespace AIO_Tools
         public void CompDown()
         {
             Logging.WriteLog("Compressed Download Started");
-            Logging.PathTXT(ini.GetFolder());
-            INI.SetInstalledSeason_Path(SDKName,ini.GetFolder());
+            Logging.PathTXT(ini.Get_tempdownloaded());
+            INI.SetInstalledSeason_Path(SDKName, ini.Get_tempdownloaded());
             INI.SetInstalledSeason_I(SDKName);
             Download.Downloading(3);
         }
         public void NormDown()
         {
             Logging.WriteLog("Download Started");
-            Logging.PathTXT(ini.GetFolder());
-            INI.SetInstalledSeason_Path(SDKName, ini.GetFolder());
+            Logging.PathTXT(ini.Get_tempdownloaded());
+            INI.SetInstalledSeason_Path(SDKName, ini.Get_tempdownloaded());
             INI.SetInstalledSeason_I(SDKName);
             Download.Downloading(2);
         }

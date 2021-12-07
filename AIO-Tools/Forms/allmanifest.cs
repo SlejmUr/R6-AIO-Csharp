@@ -2,7 +2,6 @@
 using System;
 using System.Data.SQLite;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace AIO_Tools.Forms

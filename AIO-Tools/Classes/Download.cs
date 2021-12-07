@@ -1,5 +1,4 @@
-﻿using AIO_Tools.Classes;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace AIO_Tools
 {
@@ -56,6 +55,7 @@ namespace AIO_Tools
         {
             _UserName = newname;
         }
+        //AppId
         private static string _AppID;
         public string GetAppID()
         {
@@ -65,6 +65,7 @@ namespace AIO_Tools
         {
             _AppID = newappid;
         }
+        //PlazaName
         private static string _PlazaName;
         public string GetPlazaName()
         {
@@ -82,24 +83,22 @@ namespace AIO_Tools
             string Choosed = dw.KeyChoose(Key);
             Logging.WriteLog("Download send to DL.bat: " + Choosed);
             string StartArgName = "/C cd Data & DL.bat " + Choosed;
-            // start downloading
+            //  Start downloading
             Process process = new Process();
             process.StartInfo.FileName = "cmd.exe";
             process.StartInfo.Arguments = StartArgName;
             process.Start();
             Logging.WriteLog("Download Finished");
         }
-
         public string KeyChoose(int Key)
         {
-            Download dw = new Download();
-            string depotcontent = dw.GetDepotContent();
-            string manifestcontent = dw.GetManifestContent();
-            string sdkmanifest = dw.GetSDKManifest();
-            string username = dw.GetName();
-            string sdkcontent = dw.GetSDKContent();
-            string AppID = dw.GetAppID();
-            string PlazaName = dw.GetPlazaName();
+            string depotcontent = GetDepotContent();
+            string manifestcontent = GetManifestContent();
+            string sdkmanifest = GetSDKManifest();
+            string username = GetName();
+            string sdkcontent = GetSDKContent();
+            string AppID = GetAppID();
+            string PlazaName = GetPlazaName();
             string ChoosedKey;
             switch (Key)
             {

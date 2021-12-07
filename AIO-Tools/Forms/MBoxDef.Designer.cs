@@ -40,7 +40,7 @@
             this.OK_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.OK_Button.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OK_Button.ForeColor = System.Drawing.Color.White;
-            this.OK_Button.Location = new System.Drawing.Point(232, 141);
+            this.OK_Button.Location = new System.Drawing.Point(230, 140);
             this.OK_Button.Name = "OK_Button";
             this.OK_Button.Size = new System.Drawing.Size(60, 25);
             this.OK_Button.TabIndex = 1;

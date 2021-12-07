@@ -117,6 +117,12 @@
     <Compile Include="Forms\allmanifest.Designer.cs">
       <DependentUpon>allmanifest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChooseBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseBox.designer.cs">
+      <DependentUpon>ChooseBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     <EmbeddedResource Include="Forms\allmanifest.resx">
       <DependentUpon>allmanifest.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChooseBox.resx">
+      <DependentUpon>ChooseBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
