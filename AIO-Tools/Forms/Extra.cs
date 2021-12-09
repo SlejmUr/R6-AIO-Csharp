@@ -2,7 +2,6 @@
 using System;
 using System.Data.SQLite;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 
 namespace AIO_Tools.Forms
@@ -23,6 +22,7 @@ namespace AIO_Tools.Forms
 
         private void Extra_Load(object sender, EventArgs e)
         {
+            Logging.WriteLog("Extra Loaded");
             UI_MODE();
             GettingNet.DB_Download();
         }

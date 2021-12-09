@@ -26,6 +26,10 @@ namespace AIO_Tools
             using StreamWriter log = new StreamWriter(fileStream);
             log.WriteLine(DateTime.Now + " | " + logType + " | " + strLog);
         }
+        public static void DebugLog(string strLog)
+        {
+            DebugLog(strLog,"DEBUG");
+        }
         public static void DebugLog(string strLog, string logType)
         {
             INI ini = new INI();
@@ -36,7 +40,7 @@ namespace AIO_Tools
                 if (!logDirInfo.Exists) logDirInfo.Create();
                 using FileStream fileStream = new FileStream(LoggingTXT, FileMode.Append);
                 using StreamWriter log = new StreamWriter(fileStream);
-                log.WriteLine("[DEBUG] " + DateTime.Now + " | " + logType + " | " + strLog);
+                log.WriteLine(DateTime.Now + " | " + logType + " | " + strLog);
             }
         }
         #endregion

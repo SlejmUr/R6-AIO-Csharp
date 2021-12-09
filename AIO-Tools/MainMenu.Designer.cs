@@ -55,10 +55,11 @@ namespace AIO_Tools
             this.SwitchSDK = new System.Windows.Forms.Button();
             this.SKUlabel = new System.Windows.Forms.Label();
             this.VersionLabel = new System.Windows.Forms.Label();
-            this.SettingsButton = new System.Windows.Forms.Button();
             this.DB_DateVersion = new System.Windows.Forms.Label();
             this.gettingcontent = new System.Windows.Forms.Label();
             this.Year7_Label = new System.Windows.Forms.Label();
+            this.SettingsButton = new System.Windows.Forms.Button();
+            this.Start_Gane = new System.Windows.Forms.Button();
             this.Season_Box.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -298,9 +299,9 @@ namespace AIO_Tools
             this.operationDescription.ForeColor = System.Drawing.Color.White;
             this.operationDescription.Location = new System.Drawing.Point(35, 120);
             this.operationDescription.Name = "operationDescription";
-            this.operationDescription.Size = new System.Drawing.Size(117, 13);
+            this.operationDescription.Size = new System.Drawing.Size(121, 13);
             this.operationDescription.TabIndex = 47;
-            this.operationDescription.Text = "operationDescription";
+            this.operationDescription.Text = "No operation selected";
             // 
             // Content_Label
             // 
@@ -310,9 +311,9 @@ namespace AIO_Tools
             this.Content_Label.ForeColor = System.Drawing.Color.White;
             this.Content_Label.Location = new System.Drawing.Point(595, 215);
             this.Content_Label.Name = "Content_Label";
-            this.Content_Label.Size = new System.Drawing.Size(46, 13);
+            this.Content_Label.Size = new System.Drawing.Size(98, 13);
             this.Content_Label.TabIndex = 70;
-            this.Content_Label.Text = "Release";
+            this.Content_Label.Text = "Released Content";
             // 
             // Content_Button
             // 
@@ -403,9 +404,9 @@ namespace AIO_Tools
             this.SKUlabel.ForeColor = System.Drawing.Color.White;
             this.SKUlabel.Location = new System.Drawing.Point(515, 275);
             this.SKUlabel.Name = "SKUlabel";
-            this.SKUlabel.Size = new System.Drawing.Size(72, 13);
+            this.SKUlabel.Size = new System.Drawing.Size(156, 13);
             this.SKUlabel.TabIndex = 76;
-            this.SKUlabel.Text = "SKU Content";
+            this.SKUlabel.Text = "WW Content (for most users)";
             // 
             // VersionLabel
             // 
@@ -415,22 +416,9 @@ namespace AIO_Tools
             this.VersionLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.VersionLabel.Location = new System.Drawing.Point(15, 15);
             this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(111, 13);
+            this.VersionLabel.Size = new System.Drawing.Size(108, 13);
             this.VersionLabel.TabIndex = 77;
-            this.VersionLabel.Text = "Version : " + Classes.Utils.Version;
-            // 
-            // SettingsButton
-            // 
-            this.SettingsButton.BackColor = System.Drawing.Color.Transparent;
-            this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SettingsButton.ForeColor = System.Drawing.Color.Transparent;
-            this.SettingsButton.Image = ((System.Drawing.Image)(resources.GetObject("SettingsButton.Image")));
-            this.SettingsButton.Location = new System.Drawing.Point(695, 15);
-            this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Size = new System.Drawing.Size(35, 35);
-            this.SettingsButton.TabIndex = 68;
-            this.SettingsButton.UseVisualStyleBackColor = false;
-            this.SettingsButton.Click += new System.EventHandler(this.Settings_Click);
+            this.VersionLabel.Text = "Version: 20211109.0";
             // 
             // DB_DateVersion
             // 
@@ -469,12 +457,40 @@ namespace AIO_Tools
             this.Year7_Label.Text = "Year 7";
             this.Year7_Label.Click += new System.EventHandler(this.ChangeSelectionY7);
             // 
+            // SettingsButton
+            // 
+            this.SettingsButton.BackColor = System.Drawing.Color.Transparent;
+            this.SettingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SettingsButton.ForeColor = System.Drawing.Color.Transparent;
+            this.SettingsButton.Image = ((System.Drawing.Image)(resources.GetObject("SettingsButton.Image")));
+            this.SettingsButton.Location = new System.Drawing.Point(695, 15);
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.Size = new System.Drawing.Size(35, 35);
+            this.SettingsButton.TabIndex = 68;
+            this.SettingsButton.UseVisualStyleBackColor = false;
+            this.SettingsButton.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // Start_Gane
+            // 
+            this.Start_Gane.BackColor = System.Drawing.Color.Transparent;
+            this.Start_Gane.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Start_Gane.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start_Gane.ForeColor = System.Drawing.Color.White;
+            this.Start_Gane.Location = new System.Drawing.Point(400, 295);
+            this.Start_Gane.Name = "Start_Gane";
+            this.Start_Gane.Size = new System.Drawing.Size(130, 25);
+            this.Start_Gane.TabIndex = 81;
+            this.Start_Gane.Text = "Start Game";
+            this.Start_Gane.UseVisualStyleBackColor = false;
+            this.Start_Gane.MouseClick += new System.Windows.Forms.MouseEventHandler(this.StartGameClicked);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(749, 336);
+            this.Controls.Add(this.Start_Gane);
             this.Controls.Add(this.Year7_Label);
             this.Controls.Add(this.gettingcontent);
             this.Controls.Add(this.DB_DateVersion);
@@ -539,5 +555,6 @@ namespace AIO_Tools
         public System.Windows.Forms.Label operationDescription;
         private System.Windows.Forms.Label gettingcontent;
         private System.Windows.Forms.Label Year7_Label;
+        private System.Windows.Forms.Button Start_Gane;
     }
 }

@@ -19,6 +19,7 @@ namespace AIO_Tools.Forms
 
         private void Notes_Load(object sender, EventArgs e)
         {
+            Logging.WriteLog("Notes Loaded");
             UI_MODE();
         }
 

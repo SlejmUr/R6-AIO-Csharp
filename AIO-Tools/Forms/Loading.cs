@@ -1,5 +1,6 @@
 ﻿using AIO_Tools.Classes;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AIO_Tools.Forms
@@ -33,13 +34,20 @@ namespace AIO_Tools.Forms
             string webVersion = GettingNet.GetVersion();
             if (tmpVersion.StartsWith("DEV-"))
             {
-                Logging.DebugLog("DEV version! No support, only for testing","Loading/Starting");
+                Logging.DebugLog("DEV version! No support, only for testing", "Loading/Starting");
             }
             else
             {
                 if (tmpVersion != webVersion)
                 {
-                    Logging.SpecificLog("Version Missmatch! [Tool Version:" + tmpVersion +  " , Web Version: " + webVersion +  " ]", "Loading/Starting");
+                    Logging.SpecificLog("Version Missmatch! [Tool Version:" + tmpVersion + " , Web Version: " + webVersion + " ]", "Loading/Starting");
+                    GettingNet.Update_Download();
+                    // Mbox pop up
+                    MBoxDef msgb = new MBoxDef();
+                    msgb.Size = new Size(203, 104);
+                    msgb.UpdateLabel("Version Missmatch\nPlease start AIO-Updater.bat!");
+                    msgb.UpdateButton(126, 65);
+                    msgb.Show();
                 }
             }
         }

@@ -91,6 +91,7 @@ namespace AIO_Tools.Forms
         #region UI and loads
         private void Settings_Load(object sender, EventArgs e)
         {
+            Logging.WriteLog("Settings Loaded");
             UI_MODE();
             CheckFile();
         }
