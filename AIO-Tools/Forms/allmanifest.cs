@@ -23,6 +23,7 @@ namespace AIO_Tools.Forms
 
         private void AllManifest_Load(object sender, EventArgs e)
         {
+            Logging.WriteLog("AllManifest Loaded");
             FILLName();
             UI_MODE();
         }

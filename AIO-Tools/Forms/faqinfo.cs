@@ -19,6 +19,7 @@ namespace AIO_Tools
         }
         private void faqinfo_Load(object sender, EventArgs e)
         {
+            Logging.WriteLog("FaqInfo Loaded");
             UI_MODE();
         }
 

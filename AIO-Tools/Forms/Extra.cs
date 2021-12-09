@@ -22,6 +22,7 @@ namespace AIO_Tools.Forms
 
         private void Extra_Load(object sender, EventArgs e)
         {
+            Logging.WriteLog("Extra Loaded");
             UI_MODE();
             GettingNet.DB_Download();
         }

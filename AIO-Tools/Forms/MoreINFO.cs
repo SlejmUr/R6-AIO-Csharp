@@ -38,6 +38,7 @@ namespace AIO_Tools.Forms
 
         private void CompINFO_Load(object sender, EventArgs e)
         {
+            Logging.WriteLog("Compressed Info Loaded");
             UI_MODE();
         }
         #endregion

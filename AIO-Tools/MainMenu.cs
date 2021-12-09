@@ -33,21 +33,17 @@ namespace AIO_Tools
         #region Load
         private void UI_Load(object sender, EventArgs e)
         {
+            Logging.WriteLog("MainMenu Loaded");
             UI_MODE();
-            // set to default 
-            operationDescription.Text = ("No operation selected");
+            NewStatesSET();
+            DB_VersionDate();
+            gettingcontent.Hide();
             // set to relesead content
             dw.SetSDKContent("377237");
-            Content_Label.Text = "Released Content";
-            SKUlabel.Text = "WW Content (for most users)";
-            Logging.WriteLog("MainMenu Loaded");
-            NewStatesSET();
             //UserName
             TextName = ini.GetUserName();
             dw.SetName(TextName);
             Logging.WriteLog(String.Format("Username validated as [{0}]", TextName));
-            DB_VersionDate();
-            gettingcontent.Hide();
         }
         #endregion
         #region ChangeSelections
@@ -262,9 +258,9 @@ namespace AIO_Tools
         {
             SeasonContent = 7; //Not implemented yet.
             string S1txt, S1IMG,
-    S2txt, S2IMG,
-    S3txt, S3IMG,
-    S4txt, S4IMG;
+                S2txt, S2IMG,
+                S3txt, S3IMG,
+                S4txt, S4IMG;
             S1txt = "Placeholder1";
             S1IMG = "Placeholder";
             S2txt = "Placeholder2";
@@ -292,7 +288,6 @@ namespace AIO_Tools
                     Logging.WriteLog("Velvet Shell Selected");
                     SeasonName = "Velvet Shell";
                     GetALL(SeasonName);
-
                     return;
                 case 3:
                     Logging.WriteLog("Chimera Selected");
@@ -305,7 +300,6 @@ namespace AIO_Tools
                     {
                         SeasonName = "Burnt Horizon";
                         GetALL(SeasonName);
-
                         return;
                     }
                     else
@@ -663,7 +657,7 @@ namespace AIO_Tools
                 dw.SetManifestContent(manifest_content);
                 manifest_sku = s2[1];
                 dw.SetSDKManifest(manifest_sku);
-                Logging.SpecificLog("Content: " + manifest_content + " Manifest SKU: " + manifest_sku, "Manifest Debug");
+                Logging.DebugLog("Content: " + manifest_content + " Manifest SKU: " + manifest_sku, "Manifest Debug");
             }
             //Download F1 , F2
             if (!string.IsNullOrEmpty(SDKName))
@@ -691,7 +685,7 @@ namespace AIO_Tools
             //make some strings
             string Version;
             string Date;
-            //Get manifest content, foldername, desc
+            //Get DB version, Date
             using var sqlconnection = new SQLiteConnection(datasdb);
             sqlconnection.Open();
             using var cmd = new SQLiteCommand(sqlconnection);
@@ -713,7 +707,6 @@ namespace AIO_Tools
         {
             if (ini.GetNewFeature() == false)
             {
-                Start_Gane.Hide();
                 //Logging.SpecificLog("Turned OFF", "NewFeatures");
             }
             else

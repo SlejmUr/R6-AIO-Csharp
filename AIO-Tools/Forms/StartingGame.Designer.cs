@@ -89,9 +89,9 @@ namespace AIO_Tools.Forms
             this.PathLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.PathLabel.Location = new System.Drawing.Point(40, 300);
             this.PathLabel.Name = "PathLabel";
-            this.PathLabel.Size = new System.Drawing.Size(30, 13);
+            this.PathLabel.Size = new System.Drawing.Size(97, 13);
             this.PathLabel.TabIndex = 80;
-            this.PathLabel.Text = "Path";
+            this.PathLabel.Text = "Path to Exe/Game";
             // 
             // CheckBox_Vulkan
             // 
@@ -156,9 +156,9 @@ namespace AIO_Tools.Forms
             this.ResponseLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.ResponseLabel.Location = new System.Drawing.Point(450, 45);
             this.ResponseLabel.Name = "ResponseLabel";
-            this.ResponseLabel.Size = new System.Drawing.Size(84, 13);
+            this.ResponseLabel.Size = new System.Drawing.Size(120, 13);
             this.ResponseLabel.TabIndex = 86;
-            this.ResponseLabel.Text = "ResponseLabel";
+            this.ResponseLabel.Text = "Response will be here";
             // 
             // Delete_Button
             // 

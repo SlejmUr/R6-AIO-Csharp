@@ -26,6 +26,7 @@ namespace AIO_Tools.Forms
         }
         private void StartGame_Load(object sender, EventArgs e)
         {
+            Logging.WriteLog("StartingGame Loaded");
             FILLName();
         }
         #endregion
@@ -137,7 +138,6 @@ namespace AIO_Tools.Forms
                     INI.RemoveInstalledSeason_I(season);
                     if (Directory.Exists(dir_path))
                     {
-                        MessageBox.Show("Are you reeealy sure you want to delete the directory that contain siege?");
                         Directory.Delete(dir_path);
                         Logging.WriteLog(dir_path + " will/(was) be deleted");
                     }
@@ -147,6 +147,7 @@ namespace AIO_Tools.Forms
                 InstalledBox.Items.Clear();
                 InstalledSeaons.Clear();
                 STARTEXE = null;
+                Logging.WriteLog("All Season Got Removed from INI/StartingGame");
             }
         }
         #endregion
