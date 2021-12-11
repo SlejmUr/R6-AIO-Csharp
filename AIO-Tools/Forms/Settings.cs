@@ -88,32 +88,11 @@ namespace AIO_Tools.Forms
             GettingNet.DLFast_Check(CheckBox_Fast.Checked);
         }
         #endregion
-        #region UI and loads
+        #region Loads
         private void Settings_Load(object sender, EventArgs e)
         {
             Logging.WriteLog("Settings Loaded");
-            UI_MODE();
             CheckFile();
-        }
-        private void UI_MODE()
-        {
-            if (ini.GetUI_MODE() == true)
-            {
-                //MainMenu
-                this.BackColor = Color.FromArgb(255, 255, 255, 255);
-                SteamName_Label.ForeColor = Color.Black;
-                SetUserName.ForeColor = Color.Black;
-                Compressed_INFO.ForeColor = Color.Black;
-                StreamingInstall_Button.ForeColor = Color.Black;
-                faqButton.ForeColor = Color.Black;
-                ExtraButton.ForeColor = Color.Black;
-                NotesButton.ForeColor = Color.Black;
-                PlazaGet_Button.ForeColor = Color.Black;
-                NameBox.BackColor = Color.White;
-                NameBox.ForeColor = Color.Black;
-                All_Manifest.ForeColor = Color.Black;
-                Logging.SpecificLog("MainMenu Turned ON", "UI_Mode");
-            }
         }
         #endregion
     }
