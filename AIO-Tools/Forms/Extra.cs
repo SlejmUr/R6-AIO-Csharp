@@ -23,28 +23,7 @@ namespace AIO_Tools.Forms
         private void Extra_Load(object sender, EventArgs e)
         {
             Logging.WriteLog("Extra Loaded");
-            UI_MODE();
             GettingNet.DB_Download();
-        }
-        public void UI_MODE()
-        {
-            INI ini = new INI();
-            if (ini.GetUI_MODE() == true)
-            {
-                //Extra
-                this.BackColor = Color.FromArgb(255, 255, 255, 255);
-                label1.ForeColor = Color.Black;
-                label2.ForeColor = Color.Black;
-                label3.ForeColor = Color.Black;
-                DownloadNow.ForeColor = Color.Black;
-                CloseButton.ForeColor = Color.Black;
-
-                Logging.SpecificLog("Extra Turned ON", "UI_Mode");
-            }
-            else
-            {
-                //Logging.SpecificLog("Extra Turned OFF", "UI_Mode");
-            }
         }
         #endregion
         #region SQL
