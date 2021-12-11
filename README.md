@@ -1,5 +1,5 @@
 # R6-AIO-Csharp
-Public GUI tool for Download older Siege Version!
+Public GUI tool for Downloading old Siege Version!
 
 ## Info
 This Tool is upgraded from R6-AIO-Batch!\
@@ -13,9 +13,6 @@ or the [MainMenu](#mainmenu) with Switch Content buttons.
   - [All-Manifest](#all-manifest)
   - [Extra](#extra)
   - [FaqInfo](#faq-info)
-  - [Loading](#loading)
-  - [Loads](#loads)
-  - [MBoxDef](#mboxdef)
   - [MoreInfo](#more-info)
   - [Notes](#notes)
   - [Settings](#settings)
@@ -54,18 +51,6 @@ Extra's things
 ![Faq Info Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/FAQ-Info.png?raw=true)\
 Faqinfo form
 
-### Loading
-![Loading Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/Loading.png?raw=true)\
-Loading form
-
-### Loads
-![Loads Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/Loads.png?raw=true)\
-Loads form
-
-### MBoxDef
-![MBoxDef Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/MBoxDef.png?raw=true)\
-MessageBoxDefault
-
 ### More Info
 ![More Info Picture](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/MoreINFO.png?raw=true)\
 More info form
@@ -93,12 +78,11 @@ Event:
 Shey:
 - Operation Throwback Manifest/Build, basicly old Zer0 one.
 
-
 There is what the difference between build:
 [Content difference](https://github.com/SlejmUr/R6-AIO-Csharp/blob/ReadMe-Patches/ReadMe/ContentDifference.txt)
 
 ### Switching On Main
-How, and why recommended
+You can switch [Content](#content-difference) by clicking on MainMenu "Content Switch"
 
 ## History
 History of R6 Downloader/AIO-Tools:\
@@ -108,7 +92,7 @@ So no Manifest file for Throwback, I decided to update his old R6Manifest, addin
 After like 3-5 Months,still not finished and I wanted to upgrade more and more to this project.\
 This was my old Batch Project: [Link for AIO-Batch](https://github.com/SlejmUr/R6-AIOTool-Batch)\
 Shey created his own R6Manifest named R6Downloader, but he decided to leave after 2.7 version of his tool.\
-I still update his old one based on R6Manifest, you can check there: [Link](https://github.com/SlejmUr/Manifest_Tool_TB)\
+I still update his old one based on R6Manifest, you can check there: [Throwback](https://github.com/SlejmUr/Manifest_Tool_TB)\
 But after my friends said "Why aren't you make this old AIO-Batch to C# or some other languages?"\
 So I started working on it, firstly it was hard to make something that you haven't learned.\
 But now I was happy to moved to C# from Batch.\
@@ -133,12 +117,11 @@ Conclusions on Online Stores where Siege is on.\
 What is a difference on Uplay, EGS, Steam with Downloading\
 Uplay:\
 Uplay not has publicly available manifest gathering Database.\
-Plus any downloader like DepotDownloader.\
+Plus any downloader that is public.\
 EGS:\
-Has public Downloader.\
 Not has manifest gathering Database/website.\
+Has public Downloader. (legendary)\
 Steam:\
-Has DepotDownloader.\
-And can get manifests from steamdb.info.\
-That's all.
+Can get manifests from steamdb.info.
+And has DepotDownloader.\
 
