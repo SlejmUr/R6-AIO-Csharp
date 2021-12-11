@@ -24,7 +24,6 @@ namespace AIO_Tools
         //ExtraDB integration
         private static readonly string datasdb = Utils.datasDB;
 
-
         public MainMenu()
         {
             InitializeComponent();
@@ -34,7 +33,6 @@ namespace AIO_Tools
         private void UI_Load(object sender, EventArgs e)
         {
             Logging.WriteLog("MainMenu Loaded");
-            UI_MODE();
             NewStatesSET();
             DB_VersionDate();
             gettingcontent.Hide();
@@ -712,36 +710,6 @@ namespace AIO_Tools
             else
             {
                 Logging.SpecificLog("Turned ON (Currently nothing new)", "NewFeatures");
-            }
-        }
-        //UI_Mode
-        private void UI_MODE()
-        {
-            if (ini.GetUI_MODE() == true)
-            {
-                //MainMenu
-                this.BackColor = Color.FromArgb(255, 255, 255, 255);
-                Year1_Label.ForeColor = Color.Black;
-                Year2_Label.ForeColor = Color.Black;
-                Year3_Label.ForeColor = Color.Black;
-                Year4_Label.ForeColor = Color.Black;
-                Year5_Label.ForeColor = Color.Black;
-                Year6_Label.ForeColor = Color.Black;
-                Season_1_Label.ForeColor = Color.Black;
-                Season_2_Label.ForeColor = Color.Black;
-                Season_3_Label.ForeColor = Color.Black;
-                Season_4_Label.ForeColor = Color.Black;
-                Season_Special_Label.ForeColor = Color.Black;
-                operationDescription.ForeColor = Color.Black;
-                SKUlabel.ForeColor = Color.Black;
-                DownButton.ForeColor = Color.Black;
-                SwitchSDK.ForeColor = Color.Black;
-                CompressedButton.ForeColor = Color.Black;
-                Content_Button.ForeColor = Color.Black;
-                Content_Label.ForeColor = Color.Black;
-                SettingsButton.ForeColor = Color.Black;
-                VersionLabel.ForeColor = Color.Black;
-                Logging.SpecificLog("MainMenu Turned ON", "UI_Mode");
             }
         }
         #endregion
