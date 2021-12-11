@@ -45,12 +45,6 @@ namespace AIO_Tools.Classes
             bool NewFeature = bool.Parse(NewFeatureStr);
             return NewFeature;
         }
-        public bool GetUI_MODE()
-        {
-            string UI_ModeStr = GetFromINI("UI", "lightmode");
-            bool UI_Mode = bool.Parse(UI_ModeStr);
-            return UI_Mode;
-        }
         public bool IsDebug()
         {
             string Debug_Str = GetFromINI("GeneralConfiguration", "Debug");

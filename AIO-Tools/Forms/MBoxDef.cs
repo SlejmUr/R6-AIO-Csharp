@@ -6,18 +6,11 @@ namespace AIO_Tools
 {
     public partial class MBoxDef : Form
     {
-        #region Load
+        #region Functions
         public MBoxDef()
         {
             InitializeComponent();
         }
-        private void MBoxDef_Load(object sender, EventArgs e)
-        {
-            //This Load Func need to be deleted on site
-            //Dont wanna do this on-the-fly
-        }
-        #endregion
-        #region Functions
         public void UpdateLabel(string str)
         {
             LabelText.Text = str;
