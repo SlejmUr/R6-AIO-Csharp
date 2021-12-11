@@ -15,7 +15,7 @@ namespace AIO_Tools.Forms
         //make prive things
         private string STARTEXE;
         private string Path;
-        private bool NeedBE_OFf;
+        private bool NeedBE_Off;
         private INI ini = new INI();
         private static readonly string datasdb = Utils.datasDB;
         private List<string> InstalledSeaons = new List<string>();
@@ -77,15 +77,14 @@ namespace AIO_Tools.Forms
             {
                 MBoxDef msgb = new MBoxDef();
                 msgb.Size = new Size(200, 100);
-                msgb.UpdateLabel("Starting " + STARTEXE + " !\nWith BattlEye off? " + NeedBE_OFf);
+                msgb.UpdateLabel("Starting " + STARTEXE + " !\nWith BattlEye off? " + NeedBE_Off);
                 msgb.UpdateButton(130, 65);
-                //msgb.Show();
                 msgb.ShowDialog();
                 Process process = new Process();
                 process.StartInfo.FileName = Path + "\\" + STARTEXE;
-                if (NeedBE_OFf == true) { process.StartInfo.Arguments = " /belaunch"; }
+                if (NeedBE_Off == true) { process.StartInfo.Arguments = " /belaunch"; }
                 process.Start();
-                Logging.SpecificLog(STARTEXE + " Belaunch? " + NeedBE_OFf + " Started!", "StartGame");
+                Logging.SpecificLog(STARTEXE + " Belaunch? " + NeedBE_Off + " Started!", "StartGame");
             }
         }
         private void KillButton_Clicked(object sender, EventArgs e)
@@ -154,7 +153,7 @@ namespace AIO_Tools.Forms
         #region Voids (Checking, IsInstalled)
         private void Checking()
         {
-            NeedBE_OFf = true;
+            NeedBE_Off = true;
             if (File.Exists(Path + "\\RainbowSixGame.exe")) //Checking old RainbowSixGame.exe
             {
                 STARTEXE = "RainbowSixGame.exe";
@@ -163,7 +162,7 @@ namespace AIO_Tools.Forms
             if (File.Exists(Path + "\\LumaPlay_x64.exe")) //Checking LumaPlay_x64.exe
             {
                 STARTEXE = "LumaPlay_x64.exe";
-                NeedBE_OFf = false;
+                NeedBE_Off = false;
                 return;
             }
             if (CheckBox_Vulkan.Checked == true)

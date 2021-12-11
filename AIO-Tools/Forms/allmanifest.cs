@@ -25,27 +25,6 @@ namespace AIO_Tools.Forms
         {
             Logging.WriteLog("AllManifest Loaded");
             FILLName();
-            UI_MODE();
-        }
-        public void UI_MODE()
-        {
-            INI ini = new INI();
-            if (ini.GetUI_MODE() == true)
-            {
-                //Extra
-                this.BackColor = Color.FromArgb(255, 255, 255, 255);
-                label1.ForeColor = Color.Black;
-                label2.ForeColor = Color.Black;
-                label3.ForeColor = Color.Black;
-                versiondate_label.ForeColor = Color.Black;
-                DownloadNow.ForeColor = Color.Black;
-                CloseButton.ForeColor = Color.Black;
-                Logging.SpecificLog("Extra Turned ON", "UI_Mode");
-            }
-            else
-            {
-                //Logging.SpecificLog("Extra Turned OFF", "UI_Mode");
-            }
         }
         #endregion
         #region SQL
