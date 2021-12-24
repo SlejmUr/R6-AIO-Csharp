@@ -8,10 +8,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("R6:S AllInOne Tool")]
 [assembly: AssemblyDescription("R6:S Old Version Downloader")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("SlejmUr#4007")]
+[assembly: AssemblyCompany("SlejmUr")]
 [assembly: AssemblyProduct("AIO-Tool")]
-[assembly: AssemblyCopyright("SlejmUr#4007")]
-[assembly: AssemblyTrademark("SlejmUr#4007")]
+[assembly: AssemblyCopyright("SlejmUr")]
+[assembly: AssemblyTrademark("SlejmUr")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
