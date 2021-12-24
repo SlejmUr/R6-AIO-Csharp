@@ -180,7 +180,7 @@ namespace AIO_Tools.Classes
                 if (!File.Exists("Data\\Update\\AIO-Tools.exe"))
                 {
                     //Download
-                    string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/raw/main/AIO-Tools.exe";
+                    string Download = "https://github.com/SlejmUr/R6-AIO-Csharp/raw/main/Builded/AIO-Tools_CF.exe";
                     string filename = "AIO-Tools_New.exe";
                     WebClient myWebClient = new WebClient();
                     myWebClient.DownloadFile(Download, filename);
