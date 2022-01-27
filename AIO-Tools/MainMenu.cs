@@ -186,8 +186,11 @@ namespace AIO_Tools
                 S1IMG = "voidedge";
                 S2txt = "Steel Wave";
                 S2IMG = "steelwave";
+                S3txt = "Shadow Legacy";
+                S3IMG = "shadowlegacy";
                 S4txt = "Neon Dawn";
                 S4IMG = "neondawn";
+
             }
             if (VersionContent == 2)
             {
@@ -195,25 +198,28 @@ namespace AIO_Tools
                 S2IMG = "Mute_protocol";
                 S3txt = "Telly [R6Global]";
                 S3IMG = "Telly";
+                S1txt = "Grand Larceny";
+                S1IMG = "GrandLarceny";
+                S4txt = "Road To S.I. 2021";
+                S4IMG = "roadtosi2021";
             }
             if (VersionContent == 3)
             {
-                S3txt = "Telly";
-                S3IMG = "Telly";
-            }
-            if (VersionContent == 3 || VersionContent == 4)
-            {
                 S2txt = "Mute Protocol";
                 S2IMG = "Mute";
+                S3txt = "Telly";
+                S3IMG = "Telly";
+                S1txt = "Grand Larceny";
+                S1IMG = "GrandLarceny";
+                S4txt = "Road To S.I. 2021";
+                S4IMG = "roadtosi2021";
             }
-
-            if (VersionContent == 1 || VersionContent == 4)
+            if (VersionContent == 4)
             {
                 S3txt = "Shadow Legacy";
                 S3IMG = "shadowlegacy";
-            }
-            else
-            {
+                S2txt = "Mute Protocol";
+                S2IMG = "Mute";
                 S1txt = "Grand Larceny";
                 S1IMG = "GrandLarceny";
                 S4txt = "Road To S.I. 2021";
@@ -237,6 +243,8 @@ namespace AIO_Tools
                 S2IMG = "northstar";
                 S3txt = "Crystal Guard";
                 S3IMG = "CrystalGuard";
+                S4txt = "High Calibre";
+                S4IMG = "highcalibre";
             }
             else
             {
@@ -246,9 +254,9 @@ namespace AIO_Tools
                 S2IMG = "evn_quarantine";
                 S3txt = "Event Mix";
                 S3IMG = "Y6S3_EVN_MIX";
+                S4txt = "Stadiums";
+                S4IMG = "Stadiums";
             }
-            S4txt = "High Calibre";
-            S4IMG = "highcalibre";
             YearSelect(S1IMG, S2IMG, S3IMG, S4IMG, new[] { S1txt, S2txt, S3txt, S4txt });
             Logging.WriteLog("Selected Y" + SeasonContent);
         }
@@ -259,7 +267,7 @@ namespace AIO_Tools
                 S2txt, S2IMG,
                 S3txt, S3IMG,
                 S4txt, S4IMG;
-            S1txt = "Placeholder1";
+            S1txt = "Demon Veil";
             S1IMG = "Placeholder";
             S2txt = "Placeholder2";
             S2IMG = "Placeholder";
@@ -591,9 +599,18 @@ namespace AIO_Tools
                     return;
                 case 6:
                     Logging.WriteLog("High Calibre Selected");
-                    SeasonName = "High Calibre";
-                    GetALL(SeasonName);
-                    return;
+                    if (VersionContent == 1) //Release
+                    {
+                        SeasonName = "High Calibre";
+                        GetALL(SeasonName);
+                        return;
+                    }
+                    else
+                    {
+                        SeasonName = "Stadiums";
+                        GetALL(SeasonName);
+                        return;
+                    }
                 default:
                     operationDescription.Text = "No operation selected";
                     break;

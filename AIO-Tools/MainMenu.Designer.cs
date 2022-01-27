@@ -418,7 +418,7 @@ namespace AIO_Tools
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(108, 13);
             this.VersionLabel.TabIndex = 77;
-            this.VersionLabel.Text = "Version: 20211211.0";
+            this.VersionLabel.Text = "Version: 20220127.0";
             // 
             // DB_DateVersion
             // 
