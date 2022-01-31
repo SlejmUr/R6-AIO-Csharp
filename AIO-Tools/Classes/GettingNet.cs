@@ -21,12 +21,12 @@ namespace AIO_Tools.Classes
         #region Download zips
         public static void DepotDownload()
         {
-            if (!Directory.Exists("Data\\DepotDownloader"))
+            if (!Directory.Exists("AIO_Data\\DepotDownloader"))
             {
                 //Download
                 string Download = "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.5/depotdownloader-2.4.5.zip";
                 string zipname = "depotdownloader-2.4.5.zip";
-                string extractPath = "Data\\DepotDownloader";
+                string extractPath = "AIO_Data\\DepotDownloader";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, zipname);
                 //Extract
@@ -38,13 +38,13 @@ namespace AIO_Tools.Classes
         }
         public static void PlazaDownload()
         {
-            if (!Directory.Exists("Data\\Plazas"))
+            if (!Directory.Exists("AIO_Data\\Plazas"))
             {
                 //Download
                 string Download = "https://slejmur.keybase.pub/Plazas.zip?dl=1";
                 string zipname = "Plazas.zip";
                 //string extractPath = "Plazas";
-                string extractPath = Directory.GetCurrentDirectory() + "\\Data\\Plazas";
+                string extractPath = Directory.GetCurrentDirectory() + "\\AIO_Data\\Plazas";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, zipname);
                 //Extract
@@ -57,13 +57,13 @@ namespace AIO_Tools.Classes
 
         public static void StreamingInstallDownload()
         {
-            if (!Directory.Exists("Data\\StreamingInstalls"))
+            if (!Directory.Exists("AIO_Data\\StreamingInstalls"))
             {
                 //Download 
                 string Download = "https://slejmur.keybase.pub/StreamingInstalls.zip?dl=1";
                 string zipname = "StreamingInstalls.zip";
                 //string extractPath = "Plazas";
-                string extractPath = Directory.GetCurrentDirectory() + "\\Data";
+                string extractPath = Directory.GetCurrentDirectory() + "\\AIO_Data";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, zipname);
                 //Extract
@@ -82,23 +82,23 @@ namespace AIO_Tools.Classes
         #region Download DB, bat and ini
         public static void DL_Download()
         {
-            if (!File.Exists("Data\\DL.bat"))
+            if (!File.Exists("AIO_Data\\DL.bat"))
             {
                 //Download
                 string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/raw/main/DL.bat";
                 string filename = "DL.bat";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, filename);
-                File.Move(filename, "Data\\" + filename);
+                File.Move(filename, "AIO_Data\\" + filename);
                 Logging.WriteLog("DL.bat not Exist, Download");
             }
         }
         public static void DLFast_Check(bool isChecked)
         {
 
-            if (File.Exists("Data\\DL.bat"))
+            if (File.Exists("AIO_Data\\DL.bat"))
             {
-                File.Delete("Data\\DL.bat");
+                File.Delete("AIO_Data\\DL.bat");
             }
             if (isChecked == true)
             {
@@ -111,58 +111,58 @@ namespace AIO_Tools.Classes
         }
         public static void DLFast_Download()
         {
-            if (!File.Exists("Data\\DL.bat"))
+            if (!File.Exists("AIO_Data\\DL.bat"))
             {
                 //Download
                 string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/raw/main/DL_fast.bat";
                 string filename = "DL.bat";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, filename);
-                File.Move(filename, "Data\\" + filename);
+                File.Move(filename, "AIO_Data\\" + filename);
                 Logging.WriteLog("DL.bat not Exist, Download (Fast version)");
             }
         }
         public static void DB_Download()
         {
-            if (!File.Exists("Data\\DataBase\\datas.db"))
+            if (!File.Exists("AIO_Data\\DataBase\\datas.db"))
             {
                 //Download
                 string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/raw/main/datas.db";
                 string filename = "datas.db";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, filename);
-                if (!Directory.Exists("Data\\DataBase")) { Directory.CreateDirectory("Data\\DataBase"); }
-                File.Move(filename, "Data\\DataBase\\" + filename);
+                if (!Directory.Exists("AIO_Data\\DataBase")) { Directory.CreateDirectory("AIO_Data\\DataBase"); }
+                File.Move(filename, "AIO_Data\\DataBase\\" + filename);
                 Logging.WriteLog("Datas.DB not Exist, Download");
             }
         }
 
         public static void All_Download()
         {
-            if (!File.Exists("Data\\DataBase\\all.db"))
+            if (!File.Exists("AIO_Data\\DataBase\\all.db"))
             {
                 //Download
                 string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/raw/main/all.db";
                 string filename = "all.db";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, filename);
-                if (!Directory.Exists("Data\\DataBase")) { Directory.CreateDirectory("Data\\DataBase"); }
-                File.Move(filename, "Data\\DataBase\\" + filename);
+                if (!Directory.Exists("AIO_Data\\DataBase")) { Directory.CreateDirectory("AIO_Data\\DataBase"); }
+                File.Move(filename, "AIO_Data\\DataBase\\" + filename);
                 Logging.WriteLog("All.DB not Exist, Download");
             }
         }
 
         public static void INI_Download()
         {
-            if (!File.Exists("Data\\Config\\config.ini"))
+            if (!File.Exists("AIO_Data\\Config\\config.ini"))
             {
                 //Download
                 string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/raw/main/config.ini";
                 string filename = "config.ini";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, filename);
-                if (!Directory.Exists("Data\\Config")) { Directory.CreateDirectory("Data\\Config"); }
-                File.Move(filename, "Data\\Config\\" + filename);
+                if (!Directory.Exists("AIO_Data\\Config")) { Directory.CreateDirectory("AIO_Data\\Config"); }
+                File.Move(filename, "AIO_Data\\Config\\" + filename);
                 Logging.WriteLog("config.ini not Exist, Download");
             }
         }
@@ -170,22 +170,22 @@ namespace AIO_Tools.Classes
         {
             try
             {
-                if (File.Exists("Data\\Update\\AIO-Tools.exe"))
+                if (File.Exists("AIO_Data\\Update\\AIO-Tools.exe"))
                 {
-                    File.Delete("Data\\Update\\AIO-Tools.exe");
+                    File.Delete("AIO_Data\\Update\\AIO-Tools.exe");
                 }
             }
             finally
             {
-                if (!File.Exists("Data\\Update\\AIO-Tools.exe"))
+                if (!File.Exists("AIO_Data\\Update\\AIO-Tools.exe"))
                 {
                     //Download
                     string Download = "https://github.com/SlejmUr/R6-AIO-Csharp/raw/main/Builded/AIO-Tools_CF.exe";
                     string filename = "AIO-Tools_New.exe";
                     WebClient myWebClient = new WebClient();
                     myWebClient.DownloadFile(Download, filename);
-                    if (!Directory.Exists("Data\\Update")) { Directory.CreateDirectory("Data\\Update"); }
-                    File.Move(filename, "Data\\Update\\AIO-Tools.exe");
+                    if (!Directory.Exists("AIO_Data\\Update")) { Directory.CreateDirectory("AIO_Data\\Update"); }
+                    File.Move(filename, "AIO_Data\\Update\\AIO-Tools.exe");
                     Logging.WriteLog("Update Exe not Exist, Download");
                     Update_DL_Download();
                     Logging.WriteLog("Please update to new version");
@@ -208,23 +208,23 @@ namespace AIO_Tools.Classes
         #region Filelist and Desc,etc
         public static void FileList2_Download(string ContentName)
         {
-            if (File.Exists("Data\\f2.txt"))
+            if (File.Exists("AIO_Data\\f2.txt"))
             {
-                File.Delete("Data\\f2.txt");
+                File.Delete("AIO_Data\\f2.txt");
             }
             string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/raw/main/Compressed_txt/" + ContentName + "Content.txt";
             string filename = "f2.txt";
             WebClient myWebClient = new WebClient();
             myWebClient.DownloadFile(Download, filename);
-            File.Move(filename, "Data\\" + filename);
+            File.Move(filename, "AIO_Data\\" + filename);
             Logging.WriteLog("f2.txt Downloaded: " + ContentName);
         }
         public static void FileList1_Download(string ContentName, int SDK)
         {
             string SDKNAME = "";
-            if (File.Exists("Data\\f1.txt"))
+            if (File.Exists("AIO_Data\\f1.txt"))
             {
-                File.Delete("Data\\f1.txt");
+                File.Delete("AIO_Data\\f1.txt");
             }
             switch (SDK)
             {
@@ -241,7 +241,7 @@ namespace AIO_Tools.Classes
             string filename = "f1.txt";
             WebClient myWebClient = new WebClient();
             myWebClient.DownloadFile(Download, filename);
-            File.Move(filename, "Data\\" + filename);
+            File.Move(filename, "AIO_Data\\" + filename);
             Logging.WriteLog("f1.txt Downloaded: " + ContentName + SDKNAME);
         }
         public static string GetDesc(string versionname)

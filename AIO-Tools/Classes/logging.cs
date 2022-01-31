@@ -7,7 +7,7 @@ namespace AIO_Tools
     class Logging
     {
         #region Logging
-        private static string LoggingTXT = "Data\\LOGS\\logging.txt";
+        private static string LoggingTXT = "AIO_Data\\LOGS\\logging.txt";
         public static void WriteLog(string strLog)
         {
             FileInfo logFileInfo = new FileInfo(LoggingTXT);
@@ -45,7 +45,7 @@ namespace AIO_Tools
         }
         #endregion
         #region Write Path txt
-        private static string TXTPath = "Data\\path.txt";
+        private static string TXTPath = "AIO_Data\\path.txt";
         public static void PathTXT(string path)
         {
             if (File.Exists(TXTPath))

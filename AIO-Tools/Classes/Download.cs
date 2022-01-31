@@ -82,7 +82,7 @@ namespace AIO_Tools
             Download dw = new Download();
             string Choosed = dw.KeyChoose(Key);
             Logging.WriteLog("Download send to DL.bat: " + Choosed);
-            string StartArgName = "/C cd Data & DL.bat " + Choosed;
+            string StartArgName = "/C cd AIO_Data & DL.bat " + Choosed;
             //  Start downloading
             Process process = new Process();
             process.StartInfo.FileName = "cmd.exe";

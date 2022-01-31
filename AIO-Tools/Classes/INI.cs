@@ -91,7 +91,7 @@ namespace AIO_Tools.Classes
         }
         #endregion
         #region String
-        private static string ConfigINI = "Data\\Config\\Config.ini";
+        private static string ConfigINI = "AIO_Data\\Config\\Config.ini";
         #endregion
         #region Set/Get/Remove to INI
         private string GetFromINI(string Category, string Name)
