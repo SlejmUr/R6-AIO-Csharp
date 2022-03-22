@@ -19,7 +19,7 @@ jobs:
       - name: Build app for release
         run: msbuild ./AIO-Tools/AIO-Tools.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
       - name: Zip Build
-        run: zip -r r6_aio.zip ./AIO-Tools/bin/Release
+        run: Compress-Archive -DestinationPath r6_aio.zip -Path ./AIO-Tools/bin/Release
       - name: Create release
         id: create_release
         uses: actions/create-release@v1
