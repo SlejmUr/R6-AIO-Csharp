@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      #- name: Install dependencies
-      #  run: nuget restore ./AIO-Tools/AIO-Tools.csproj
+      - name: Install dependencies
+        run: nuget restore ./AIO-Tools/packages.config
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
       - name: Build app for release
