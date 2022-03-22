@@ -17,7 +17,7 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
       - name: Build app for release
-        run: msbuild ./AIO-Tools/AIO-Tools.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
+        run: msbuild ./AIO-Tools/AIO-Tools.csproj -t:rebuild -property:Configuration=Release
       - name: Zip Build
         run: Compress-Archive -DestinationPath r6_aio.zip -Path ./AIO-Tools/bin/Release/*
       - name: Create release
