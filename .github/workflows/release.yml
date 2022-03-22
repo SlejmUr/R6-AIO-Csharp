@@ -13,9 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: dotnet restore
-      - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: nuget restore ./AIO-Tools/AIO-Tools.csproj
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+      - name: Build app for release
+        run: msbuild ./AIO-Tools/AIO-Tools.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
       - name: Zip Build
         run: zip -r r6_aio.zip ./AIO-Tools/bin/Release
       - name: Create release
