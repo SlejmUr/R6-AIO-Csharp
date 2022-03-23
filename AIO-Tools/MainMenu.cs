@@ -268,7 +268,7 @@ namespace AIO_Tools
                 S3txt, S3IMG,
                 S4txt, S4IMG;
             S1txt = "Demon Veil";
-            S1IMG = "Placeholder";
+            S1IMG = "DemonVeil";
             S2txt = "Placeholder2";
             S2IMG = "Placeholder";
             S3txt = "Placeholder3";
@@ -349,6 +349,11 @@ namespace AIO_Tools
                         GetALL(SeasonName);
                         return;
                     }
+                case 7:
+                    Logging.WriteLog("Demon Veil Selected");
+                    SeasonName = "Demon Veil";
+                    GetALL(SeasonName);
+                    return;
                 default:
                     operationDescription.Text = "No operation selected";
                     break;

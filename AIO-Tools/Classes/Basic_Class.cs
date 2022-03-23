@@ -13,8 +13,8 @@ namespace AIO_Tools.Classes
         "voidedge","steelwave","neondawn","Mute_protocol","Telly",
         "Mute","shadowlegacy","GrandLarceny","roadtosi2021",
         "CrimsonHeist","northstar","CrystalGuard","rainbowismagic",
-        "evn_quarantine","Y6S3_EVN_MIX","highcalibre","Stadiums","Placeholder","Placeholder2","base"};
-        public static string Version = "20220127.0";
+        "evn_quarantine","Y6S3_EVN_MIX","highcalibre","Stadiums","DemonVeil","Placeholder","Placeholder2","base"};
+        public static string Version = "20220323.0";
         private static readonly string extractPath = Directory.GetCurrentDirectory();
         public static readonly string datasDB = @"URI=file:" + extractPath + "\\AIO_Data\\DataBase\\datas.db";
         public static readonly string allDB = @"URI=file:" + extractPath + "\\AIO_Data\\DataBase\\all.db";
