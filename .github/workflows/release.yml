@@ -18,8 +18,6 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       - name: Build app for release
         run: msbuild ./AIO-Tools/AIO-Tools.csproj -t:rebuild -property:Configuration=Release
-      - name: Zip Build
-        run: Compress-Archive -DestinationPath r6_aio.zip -Path ./AIO-Tools/bin/Release/*
       - name: Create release
         id: create_release
         uses: actions/create-release@v1
@@ -28,19 +26,12 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          draft: true
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./r6_aio.zip
-          asset_name: r6_aio.zip
-          asset_content_type: application/zip
-      - name: Publish release
-        uses: eregon/publish-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          release_id: ${{ steps.create_release.outputs.id }}
+          asset_path: ./AIO-Tools/bin/Release/AIO-Tools.exe
+          asset_name: AIO-Tools.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
