@@ -26,6 +26,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
+          draft: true
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
         env:
@@ -35,3 +36,9 @@ jobs:
           asset_path: ./AIO-Tools/bin/Release/AIO-Tools.exe
           asset_name: AIO-Tools.exe
           asset_content_type: application/vnd.microsoft.portable-executable
+      - name: Publish release
+        uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }} 
