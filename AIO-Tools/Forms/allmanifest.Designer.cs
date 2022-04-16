@@ -30,21 +30,21 @@ namespace AIO_Tools.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(allmanifest));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.DownloadNow = new System.Windows.Forms.Button();
-            this.CloseButton = new System.Windows.Forms.Button();
-            this.versiondate_label = new System.Windows.Forms.Label();
+            this.comboBox1 = new AltUI.Controls.DarkComboBox();
+            this.comboBox2 = new AltUI.Controls.DarkComboBox();
+            this.label1 = new AltUI.Controls.DarkLabel();
+            this.label2 = new AltUI.Controls.DarkLabel();
+            this.label3 = new AltUI.Controls.DarkLabel();
+            this.DownloadNow = new AltUI.Controls.DarkButton();
+            this.CloseButton = new AltUI.Controls.DarkButton();
+            this.versiondate_label = new AltUI.Controls.DarkLabel();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Window;
             this.comboBox1.DropDownHeight = 86;
             this.comboBox1.Font = new System.Drawing.Font("Nirmala UI", 9F);
+            this.comboBox1.AutoExpanding = true;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.IntegralHeight = false;
             this.comboBox1.Location = new System.Drawing.Point(30, 55);
@@ -55,9 +55,9 @@ namespace AIO_Tools.Forms
             // 
             // comboBox2
             // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.Window;
             this.comboBox2.DropDownHeight = 63;
             this.comboBox2.Font = new System.Drawing.Font("Nirmala UI", 9F);
+            this.comboBox2.AutoExpanding = true;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.IntegralHeight = false;
             this.comboBox2.Location = new System.Drawing.Point(31, 130);
@@ -69,9 +69,7 @@ namespace AIO_Tools.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(30, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 15);
@@ -81,9 +79,7 @@ namespace AIO_Tools.Forms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(30, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 15);
@@ -93,9 +89,7 @@ namespace AIO_Tools.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(212, 25);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(298, 150);
@@ -104,38 +98,28 @@ namespace AIO_Tools.Forms
             // 
             // DownloadNow
             // 
-            this.DownloadNow.BackColor = System.Drawing.Color.Transparent;
-            this.DownloadNow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DownloadNow.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DownloadNow.ForeColor = System.Drawing.Color.White;
             this.DownloadNow.Location = new System.Drawing.Point(31, 212);
             this.DownloadNow.Name = "DownloadNow";
             this.DownloadNow.Size = new System.Drawing.Size(78, 25);
             this.DownloadNow.TabIndex = 64;
             this.DownloadNow.Text = "Download";
-            this.DownloadNow.UseVisualStyleBackColor = false;
             this.DownloadNow.Click += new System.EventHandler(this.Download_Click);
             // 
             // CloseButton
             // 
-            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CloseButton.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.ForeColor = System.Drawing.Color.White;
             this.CloseButton.Location = new System.Drawing.Point(115, 212);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(60, 25);
             this.CloseButton.TabIndex = 65;
             this.CloseButton.Text = "Close";
-            this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.Close_Click);
             // 
             // versiondate_label
             // 
             this.versiondate_label.AutoSize = true;
-            this.versiondate_label.BackColor = System.Drawing.Color.Transparent;
             this.versiondate_label.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.versiondate_label.ForeColor = System.Drawing.Color.White;
             this.versiondate_label.Location = new System.Drawing.Point(212, 212);
             this.versiondate_label.Name = "versiondate_label";
             this.versiondate_label.Size = new System.Drawing.Size(203, 15);
@@ -145,8 +129,6 @@ namespace AIO_Tools.Forms
             // allmanifest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(529, 251);
             this.Controls.Add(this.versiondate_label);
             this.Controls.Add(this.CloseButton);
@@ -156,10 +138,11 @@ namespace AIO_Tools.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "allmanifest";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All Manifest";
             this.Load += new System.EventHandler(this.AllManifest_Load);
             this.ResumeLayout(false);
@@ -169,13 +152,13 @@ namespace AIO_Tools.Forms
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button DownloadNow;
-        private System.Windows.Forms.Button CloseButton;
-        private System.Windows.Forms.Label versiondate_label;
+        private AltUI.Controls.DarkComboBox comboBox1;
+        private AltUI.Controls.DarkComboBox comboBox2;
+        private AltUI.Controls.DarkLabel label1;
+        private AltUI.Controls.DarkLabel label2;
+        private AltUI.Controls.DarkLabel label3;
+        private AltUI.Controls.DarkButton DownloadNow;
+        private AltUI.Controls.DarkButton CloseButton;
+        private AltUI.Controls.DarkLabel versiondate_label;
     }
 }

@@ -3,13 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
 
 namespace AIO_Tools.Forms
 {
-    public partial class StartingGame : Form
+    public partial class StartingGame : AltUI.Forms.DarkForm
     {
         #region Starting and LoadForm
         //make prive things
@@ -75,16 +73,12 @@ namespace AIO_Tools.Forms
         {
             if (!string.IsNullOrEmpty(STARTEXE))
             {
-                MBoxDef msgb = new MBoxDef();
-                msgb.Size = new Size(200, 100);
-                msgb.UpdateLabel("Starting " + STARTEXE + " !\nWith BattlEye off? " + NeedBE_Off);
-                msgb.UpdateButton(130, 65);
-                msgb.ShowDialog();
+                AltUI.Forms.DarkMessageBox.ShowMessage($"Starting {STARTEXE}!\nWith BattlEye off? {NeedBE_Off}", "Starting...");
                 Process process = new Process();
                 process.StartInfo.FileName = Path + "\\" + STARTEXE;
-                if (NeedBE_Off == true) { process.StartInfo.Arguments = " /belaunch"; }
+                if (NeedBE_Off) { process.StartInfo.Arguments = " /belaunch"; }
                 process.Start();
-                Logging.SpecificLog(STARTEXE + " Belaunch? " + NeedBE_Off + " Started!", "StartGame");
+                Logging.SpecificLog($"{STARTEXE} Belaunch? {NeedBE_Off} Started!", "StartGame");
             }
         }
         private void KillButton_Clicked(object sender, EventArgs e)
