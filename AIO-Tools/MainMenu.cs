@@ -3,7 +3,6 @@ using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Data.SQLite;
 using System.Diagnostics;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace AIO_Tools
@@ -20,8 +19,8 @@ namespace AIO_Tools
         private int SeasonContent = 1;
         private int VersionContent = 1;
         //importing from other class
-        private Download dw = new Download();
-        private INI ini = new INI();
+        private readonly Download dw = new Download();
+        private readonly INI ini = new INI();
         //ExtraDB integration
         private static readonly string datasdb = Utils.datasDB;
 
@@ -859,8 +858,10 @@ namespace AIO_Tools
         {
             Logging.SpecificLog("SubPathsTrue_SaveFalse", "DownloadStates");
             // IF no Select download Patch
-            CommonOpenFileDialog folderDlg = new CommonOpenFileDialog();
-            folderDlg.IsFolderPicker = true;
+            CommonOpenFileDialog folderDlg = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true
+            };
             if (folderDlg.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 // Set download Patch
@@ -885,8 +886,8 @@ namespace AIO_Tools
         {
             Logging.SpecificLog("SubPathsFalse_SaveFalse", "DownloadStates");
             // IF no Select download Patch
-            CommonOpenFileDialog folderDlg = new CommonOpenFileDialog();
-            folderDlg.IsFolderPicker = true;
+            CommonOpenFileDialog folderDlg = new CommonOpenFileDialog
+            { IsFolderPicker = true };
             if (folderDlg.ShowDialog() == CommonFileDialogResult.Ok)
             {
                 // Set download Patch
@@ -912,8 +913,8 @@ namespace AIO_Tools
             Logging.SpecificLog("SubPathsFalse_SaveTrue", "DownloadStates");
             if (string.IsNullOrEmpty(ini.GetFolder()))
             {
-                CommonOpenFileDialog folderDlg = new CommonOpenFileDialog();
-                folderDlg.IsFolderPicker = true;
+                CommonOpenFileDialog folderDlg = new CommonOpenFileDialog
+                { IsFolderPicker = true };
                 if (folderDlg.ShowDialog() == CommonFileDialogResult.Ok)
                 {
                     var Selected = folderDlg.FileName;
@@ -955,8 +956,8 @@ namespace AIO_Tools
             if (string.IsNullOrEmpty(ini.GetFolder()))
             {
 
-                CommonOpenFileDialog folderDlg = new CommonOpenFileDialog();
-                folderDlg.IsFolderPicker = true;
+                CommonOpenFileDialog folderDlg = new CommonOpenFileDialog
+                { IsFolderPicker = true };
                 if (folderDlg.ShowDialog() == CommonFileDialogResult.Ok)
                 {
                     // Set download Patch
