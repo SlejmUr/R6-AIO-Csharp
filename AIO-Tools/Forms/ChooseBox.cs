@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace AIO_Tools.Forms
 {
-    public partial class ChooseBox : Form
+    public partial class ChooseBox : AltUI.Forms.DarkForm
     {
         public ChooseBox()
         {

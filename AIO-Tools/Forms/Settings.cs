@@ -1,11 +1,9 @@
 ﻿using AIO_Tools.Classes;
 using System;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace AIO_Tools.Forms
 {
-    public partial class Settings : Form
+    public partial class Settings : AltUI.Forms.DarkForm
     {
         #region Starts
         private string TextName;
@@ -40,11 +38,7 @@ namespace AIO_Tools.Forms
         {
             Validate_Name();
             //Mbox pop up
-            using MBoxDef msgb = new MBoxDef();
-            msgb.Size = new Size(203, 104);
-            msgb.UpdateLabel("Username Validated");
-            msgb.UpdateButton(126, 43);
-            msgb.Show();
+            AltUI.Forms.DarkMessageBox.ShowMessage("Username Validated", "Success");
         }
         #endregion
         #region Move forms, or show forms

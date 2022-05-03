@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace AIO_Tools.Forms
 {
-    public partial class Loading : Form
+    public partial class Loading : AltUI.Forms.DarkForm
     {
         public Loading()
         {
@@ -43,11 +43,7 @@ namespace AIO_Tools.Forms
                     Logging.SpecificLog("Version Missmatch! [Tool Version:" + tmpVersion + " , Web Version: " + webVersion + " ]", "Loading/Starting");
                     GettingNet.Update_Download();
                     // Mbox pop up
-                    MBoxDef msgb = new MBoxDef();
-                    msgb.Size = new Size(203, 104);
-                    msgb.UpdateLabel("Version Missmatch\nPlease start AIO-Updater.bat!");
-                    msgb.UpdateButton(126, 65);
-                    msgb.Show();
+                    AltUI.Forms.DarkMessageBox.ShowMessage("Version Missmatch\nPlease start AIO-Updater.bat!", "Error");
                 }
             }
         }

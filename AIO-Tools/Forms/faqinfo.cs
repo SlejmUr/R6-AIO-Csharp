@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
 
 namespace AIO_Tools
 {
-    public partial class faqinfo : Form
+    public partial class faqinfo : AltUI.Forms.DarkForm
     {
         #region Literally nothing usefull
         public faqinfo()

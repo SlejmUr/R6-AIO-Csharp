@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ExtraLang = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CloseButton = new System.Windows.Forms.Button();
-            this.DownloadNow = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
+            this.ExtraLang = new AltUI.Controls.DarkComboBox();
+            this.label1 = new AltUI.Controls.DarkLabel();
+            this.comboBox3 = new AltUI.Controls.DarkComboBox();
+            this.comboBox2 = new AltUI.Controls.DarkComboBox();
+            this.label2 = new AltUI.Controls.DarkLabel();
+            this.label3 = new AltUI.Controls.DarkLabel();
+            this.CloseButton = new AltUI.Controls.DarkButton();
+            this.DownloadNow = new AltUI.Controls.DarkButton();
             this.SuspendLayout();
             // 
             // ExtraLang
             // 
-            this.ExtraLang.BackColor = System.Drawing.SystemColors.Window;
             this.ExtraLang.DropDownHeight = 86;
             this.ExtraLang.Font = new System.Drawing.Font("Nirmala UI", 9F);
             this.ExtraLang.FormattingEnabled = true;
@@ -69,9 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(10, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 15);
@@ -105,9 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(10, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 15);
@@ -117,9 +113,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 9F);
-            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(10, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 15);
@@ -128,37 +122,28 @@
             // 
             // CloseButton
             // 
-            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CloseButton.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.ForeColor = System.Drawing.Color.White;
             this.CloseButton.Location = new System.Drawing.Point(97, 200);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(60, 25);
             this.CloseButton.TabIndex = 62;
             this.CloseButton.Text = "Close";
-            this.CloseButton.UseVisualStyleBackColor = false;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // DownloadNow
             // 
-            this.DownloadNow.BackColor = System.Drawing.Color.Transparent;
-            this.DownloadNow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.DownloadNow.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DownloadNow.ForeColor = System.Drawing.Color.White;
             this.DownloadNow.Location = new System.Drawing.Point(12, 200);
             this.DownloadNow.Name = "DownloadNow";
             this.DownloadNow.Size = new System.Drawing.Size(78, 25);
             this.DownloadNow.TabIndex = 63;
             this.DownloadNow.Text = "Download";
-            this.DownloadNow.UseVisualStyleBackColor = false;
             this.DownloadNow.Click += new System.EventHandler(this.DownloadNow_Click);
             // 
             // Extra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(169, 261);
             this.Controls.Add(this.DownloadNow);
@@ -171,11 +156,13 @@
             this.Controls.Add(this.ExtraLang);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Extra";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Extra";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Extra_Load);
@@ -186,13 +173,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox ExtraLang;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button CloseButton;
-        private System.Windows.Forms.Button DownloadNow;
+        private AltUI.Controls.DarkComboBox ExtraLang;
+        private AltUI.Controls.DarkLabel label1;
+        private AltUI.Controls.DarkComboBox comboBox3;
+        private AltUI.Controls.DarkComboBox comboBox2;
+        private AltUI.Controls.DarkLabel label2;
+        private AltUI.Controls.DarkLabel label3;
+        private AltUI.Controls.DarkButton CloseButton;
+        private AltUI.Controls.DarkButton DownloadNow;
     }
 }

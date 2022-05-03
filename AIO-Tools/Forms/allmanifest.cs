@@ -1,4 +1,5 @@
 ﻿using AIO_Tools.Classes;
+using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Data.SQLite;
 using System.Drawing;
@@ -6,7 +7,7 @@ using System.Windows.Forms;
 
 namespace AIO_Tools.Forms
 {
-    public partial class allmanifest : Form
+    public partial class allmanifest : AltUI.Forms.DarkForm
     {
         #region Start
         public allmanifest()
@@ -112,32 +113,24 @@ namespace AIO_Tools.Forms
 
                 if (dw.GetName() == null & string.IsNullOrEmpty(dw.GetName()))
                 {
-                    MBoxDef msgb = new MBoxDef();
-                    msgb.Size = new Size(203, 104);
-                    msgb.UpdateLabel("Please enter a username on main tool");
-                    msgb.UpdateButton(126, 43);
-                    msgb.Show();
+                    AltUI.Forms.DarkMessageBox.ShowMessage("Please enter a username on main tool", "Error");
                 }
                 else
                 {
                     // IF no Select download Path
-                    FolderBrowserDialog folderDlg = new FolderBrowserDialog();
-                    DialogResult result = folderDlg.ShowDialog();
-                    if (result == DialogResult.OK)
+                    CommonOpenFileDialog folderDlg = new CommonOpenFileDialog();
+                    folderDlg.IsFolderPicker = true;
+                    if (folderDlg.ShowDialog() == CommonFileDialogResult.Ok)
                     {
                         // Set download Patch
-                        Logging.PathTXT(folderDlg.SelectedPath);
+                        Logging.PathTXT(folderDlg.FileName);
                     }
                     Download.Downloading(1);
                 }
             }
             else
             {
-                MBoxDef msgb = new MBoxDef();
-                msgb.Size = new Size(203, 104);
-                msgb.UpdateLabel("Please choose All Items!");
-                msgb.UpdateButton(126, 43);
-                msgb.Show();
+                AltUI.Forms.DarkMessageBox.ShowMessage("Please choose All Items!", "Error");
             }
         }
         #endregion

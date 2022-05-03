@@ -71,11 +71,7 @@ namespace AIO_Tools.Classes
                 //Delete
                 File.Delete(zipname);
                 Logging.WriteLog("StreamingInstalls not Exist, Download");
-                MBoxDef msgb = new MBoxDef();
-                msgb.Size = new Size(203, 104);
-                msgb.UpdateLabel("Please check the\nCompressed INFO!");
-                msgb.UpdateButton(126, 43);
-                msgb.Show();
+                AltUI.Forms.DarkMessageBox.ShowMessage("Please check the\nCompressed INFO!", "Info");
             }
         }
         #endregion

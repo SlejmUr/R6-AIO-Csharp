@@ -1,9 +1,8 @@
 ﻿using AIO_Tools.Classes;
-using System.Windows.Forms;
 
 namespace AIO_Tools.Forms
 {
-    public partial class PictureLoader : Form
+    public partial class PictureLoader : AltUI.Forms.DarkForm
     {
         #region LoadAllPictures
         //Need this to be "Faster?" on the MainMenu
