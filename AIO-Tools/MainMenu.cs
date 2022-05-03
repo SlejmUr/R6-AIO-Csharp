@@ -267,14 +267,29 @@ namespace AIO_Tools
                 S2txt, S2IMG,
                 S3txt, S3IMG,
                 S4txt, S4IMG;
-            S1txt = "Demon Veil";
-            S1IMG = "DemonVeil";
-            S2txt = "Placeholder2";
-            S2IMG = "Placeholder";
-            S3txt = "Placeholder3";
-            S3IMG = "Placeholder";
-            S4txt = "Placeholder4";
-            S4IMG = "Placeholder";
+            if (VersionContent == 1)
+            {
+                S1txt = "Demon Veil";
+                S1IMG = "DemonVeil";
+                S2txt = "Placeholder2";
+                S2IMG = "Placeholder";
+                S3txt = "Placeholder3";
+                S3IMG = "Placeholder";
+                S4txt = "Placeholder4";
+                S4IMG = "Placeholder";
+            }
+            else
+            {
+                S1txt = "Toky Event";
+                S1IMG = "TOKY";
+                S2txt = "Placeholder2";
+                S2IMG = "Placeholder";
+                S3txt = "Placeholder3";
+                S3IMG = "Placeholder";
+                S4txt = "Placeholder4";
+                S4IMG = "Placeholder";
+            }
+
             YearSelect(S1IMG, S2IMG, S3IMG, S4IMG, new[] { S1txt, S2txt, S3txt, S4txt });
             Logging.WriteLog("Selected Y" + SeasonContent);
         }
@@ -351,9 +366,18 @@ namespace AIO_Tools
                     }
                 case 7:
                     Logging.WriteLog("Demon Veil Selected");
-                    SeasonName = "Demon Veil";
-                    GetALL(SeasonName);
-                    return;
+                    if (VersionContent == 1) //Release
+                    {
+                        SeasonName = "Demon Veil";
+                        GetALL(SeasonName);
+                        return;
+                    }
+                    else
+                    {
+                        SeasonName = "TOKY";
+                        GetALL(SeasonName);
+                        return;
+                    }
                 default:
                     operationDescription.Text = "No operation selected";
                     break;

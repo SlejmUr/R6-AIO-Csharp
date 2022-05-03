@@ -24,8 +24,8 @@ namespace AIO_Tools.Classes
             if (!Directory.Exists("AIO_Data\\DepotDownloader"))
             {
                 //Download
-                string Download = "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.5/depotdownloader-2.4.5.zip";
-                string zipname = "depotdownloader-2.4.5.zip";
+                string Download = "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.6/depotdownloader-2.4.6.zip";
+                string zipname = "depotdownloader-2.4.6.zip";
                 string extractPath = "AIO_Data\\DepotDownloader";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, zipname);
