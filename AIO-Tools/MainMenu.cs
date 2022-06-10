@@ -262,7 +262,7 @@ namespace AIO_Tools
         }
         private void ChangeSelectionY7(object sender, EventArgs e)
         {
-            SeasonContent = 7; //Not implemented yet.
+            SeasonContent = 7;
             string S1txt, S1IMG,
                 S2txt, S2IMG,
                 S3txt, S3IMG,
@@ -271,7 +271,7 @@ namespace AIO_Tools
             {
                 S1txt = "Demon Veil";
                 S1IMG = "DemonVeil";
-                S2txt = "Placeholder2";
+                S2txt = "Vector Glare";
                 S2IMG = "Placeholder";
                 S3txt = "Placeholder3";
                 S3IMG = "Placeholder";
@@ -282,7 +282,7 @@ namespace AIO_Tools
             {
                 S1txt = "Toky Event";
                 S1IMG = "TOKY";
-                S2txt = "Placeholder2";
+                S2txt = "Mute Reboot(2)";
                 S2IMG = "Placeholder";
                 S3txt = "Placeholder3";
                 S3IMG = "Placeholder";
