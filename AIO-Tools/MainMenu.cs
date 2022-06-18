@@ -273,9 +273,9 @@ namespace AIO_Tools
                 S1IMG = "DemonVeil";
                 S2txt = "Vector Glare";
                 S2IMG = "Placeholder";
-                S3txt = "Placeholder3";
+                S3txt = "Dread Stinger";
                 S3IMG = "Placeholder";
-                S4txt = "Placeholder4";
+                S4txt = "Season 4";
                 S4IMG = "Placeholder";
             }
             else
@@ -284,9 +284,9 @@ namespace AIO_Tools
                 S1IMG = "TOKY";
                 S2txt = "Mute Reboot(2)";
                 S2IMG = "Placeholder";
-                S3txt = "Placeholder3";
+                S3txt = "Event S3";
                 S3IMG = "Placeholder";
-                S4txt = "Placeholder4";
+                S4txt = "Event S4";
                 S4IMG = "Placeholder";
             }
 
@@ -451,6 +451,20 @@ namespace AIO_Tools
                     else
                     {
                         SeasonName = "Nest Destruction";
+                        GetALL(SeasonName);
+                        return;
+                    }
+                case 7:
+                    Logging.WriteLog("Vector Glare Selected");
+                    if (VersionContent == 1) //Release
+                    {
+                        SeasonName = "Vector Glare";
+                        GetALL(SeasonName);
+                        return;
+                    }
+                    else
+                    {
+                        SeasonName = "Mute Reboot";
                         GetALL(SeasonName);
                         return;
                     }
