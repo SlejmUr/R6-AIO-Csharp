@@ -262,7 +262,7 @@ namespace AIO_Tools
         }
         private void ChangeSelectionY7(object sender, EventArgs e)
         {
-            SeasonContent = 7; //Not implemented yet.
+            SeasonContent = 7;
             string S1txt, S1IMG,
                 S2txt, S2IMG,
                 S3txt, S3IMG,
@@ -271,22 +271,22 @@ namespace AIO_Tools
             {
                 S1txt = "Demon Veil";
                 S1IMG = "DemonVeil";
-                S2txt = "Placeholder2";
+                S2txt = "Vector Glare";
                 S2IMG = "Placeholder";
-                S3txt = "Placeholder3";
+                S3txt = "Dread Stinger";
                 S3IMG = "Placeholder";
-                S4txt = "Placeholder4";
+                S4txt = "Season 4";
                 S4IMG = "Placeholder";
             }
             else
             {
                 S1txt = "Toky Event";
                 S1IMG = "TOKY";
-                S2txt = "Placeholder2";
+                S2txt = "Mute Reboot(2)";
                 S2IMG = "Placeholder";
-                S3txt = "Placeholder3";
+                S3txt = "Event S3";
                 S3IMG = "Placeholder";
-                S4txt = "Placeholder4";
+                S4txt = "Event S4";
                 S4IMG = "Placeholder";
             }
 
@@ -451,6 +451,20 @@ namespace AIO_Tools
                     else
                     {
                         SeasonName = "Nest Destruction";
+                        GetALL(SeasonName);
+                        return;
+                    }
+                case 7:
+                    Logging.WriteLog("Vector Glare Selected");
+                    if (VersionContent == 1) //Release
+                    {
+                        SeasonName = "Vector Glare";
+                        GetALL(SeasonName);
+                        return;
+                    }
+                    else
+                    {
+                        SeasonName = "Mute Reboot";
                         GetALL(SeasonName);
                         return;
                     }
