@@ -60,6 +60,7 @@ namespace AIO_Tools
             this.Year7_Label = new System.Windows.Forms.Label();
             this.SettingsButton = new System.Windows.Forms.Button();
             this.Start_Gane = new System.Windows.Forms.Button();
+            this.Year8_Label = new System.Windows.Forms.Label();
             this.Season_Box.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -484,12 +485,26 @@ namespace AIO_Tools
             this.Start_Gane.UseVisualStyleBackColor = false;
             this.Start_Gane.MouseClick += new System.Windows.Forms.MouseEventHandler(this.StartGameClicked);
             // 
+            // Year8_Label
+            // 
+            this.Year8_Label.AutoSize = true;
+            this.Year8_Label.BackColor = System.Drawing.Color.Transparent;
+            this.Year8_Label.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Year8_Label.ForeColor = System.Drawing.Color.White;
+            this.Year8_Label.Location = new System.Drawing.Point(20, 225);
+            this.Year8_Label.Name = "Year8_Label";
+            this.Year8_Label.Size = new System.Drawing.Size(38, 15);
+            this.Year8_Label.TabIndex = 82;
+            this.Year8_Label.Text = "Year 8";
+            this.Year8_Label.Click += new System.EventHandler(this.ChangeSelectionY8);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(749, 336);
+            this.Controls.Add(this.Year8_Label);
             this.Controls.Add(this.Start_Gane);
             this.Controls.Add(this.Year7_Label);
             this.Controls.Add(this.gettingcontent);
@@ -556,5 +571,6 @@ namespace AIO_Tools
         private System.Windows.Forms.Label gettingcontent;
         private System.Windows.Forms.Label Year7_Label;
         private System.Windows.Forms.Button Start_Gane;
+        private System.Windows.Forms.Label Year8_Label;
     }
 }

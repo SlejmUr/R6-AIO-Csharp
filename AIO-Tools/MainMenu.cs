@@ -93,6 +93,9 @@ namespace AIO_Tools
                 case 7:
                     ChangeSelectionY7(sender, e);
                     return;
+                case 8:
+                    ChangeSelectionY8(sender, e);
+                    return;
                 default:
                     break;
             }
@@ -272,21 +275,54 @@ namespace AIO_Tools
                 S1txt = "Demon Veil";
                 S1IMG = "DemonVeil";
                 S2txt = "Vector Glare";
-                S2IMG = "Placeholder";
-                S3txt = "Dread Stinger";
-                S3IMG = "Placeholder";
-                S4txt = "Season 4";
-                S4IMG = "Placeholder";
+                S2IMG = "VectorGlare";
+                S3txt = "Brutal Swarm";
+                S3IMG = "BrutalSwarm";
+                S4txt = "Solar Raid";
+                S4IMG = "SolarRaid";
             }
             else
             {
                 S1txt = "Toky Event";
                 S1IMG = "TOKY";
                 S2txt = "Mute Reboot(2)";
-                S2IMG = "Placeholder";
-                S3txt = "Event S3";
+                S2IMG = "Mute_protocol";
+                S3txt = "Doctors Sniper";
                 S3IMG = "Placeholder";
-                S4txt = "Event S4";
+                S4txt = "Snow Brawl";
+                S4IMG = "Placeholder";
+            }
+
+            YearSelect(S1IMG, S2IMG, S3IMG, S4IMG, new[] { S1txt, S2txt, S3txt, S4txt });
+            Logging.WriteLog("Selected Y" + SeasonContent);
+        }
+        private void ChangeSelectionY8(object sender, EventArgs e)
+        {
+            SeasonContent = 7;
+            string S1txt, S1IMG,
+                S2txt, S2IMG,
+                S3txt, S3IMG,
+                S4txt, S4IMG;
+            if (VersionContent == 1)
+            {
+                S1txt = "Commanding Force";
+                S1IMG = "CommandingForce";
+                S2txt = "Placeholder";
+                S2IMG = "Placeholder";
+                S3txt = "Placeholder";
+                S3IMG = "Placeholder";
+                S4txt = "Placeholder";
+                S4IMG = "Placeholder";
+            }
+            else
+            {
+                S1txt = "Placeholder";
+                S1IMG = "Placeholder";
+                S2txt = "Placeholder";
+                S2IMG = "Placeholder";
+                S3txt = "Placeholder";
+                S3IMG = "Placeholder";
+                S4txt = "Placeholder";
                 S4IMG = "Placeholder";
             }
 
@@ -378,6 +414,11 @@ namespace AIO_Tools
                         GetALL(SeasonName);
                         return;
                     }
+                case 8:
+                    Logging.WriteLog("Commanding Force Selected");
+                    SeasonName = "Commanding Force";
+                    GetALL(SeasonName);
+                    return;
                 default:
                     operationDescription.Text = "No operation selected";
                     break;
@@ -578,6 +619,20 @@ namespace AIO_Tools
                         GetALL(SeasonName);
                         return;
                     }
+                case 7:
+                    Logging.WriteLog("Brutal Swarm Selected");
+                    if (VersionContent == 1) //Release
+                    {
+                        SeasonName = "Brutal Swarm";
+                        GetALL(SeasonName);
+                        return;
+                    }
+                    else
+                    {
+                        SeasonName = "Doctors Sniper";
+                        GetALL(SeasonName);
+                        return;
+                    }
                 default:
                     operationDescription.Text = "No operation selected";
                     break;
@@ -651,6 +706,20 @@ namespace AIO_Tools
                     else
                     {
                         SeasonName = "Stadiums";
+                        GetALL(SeasonName);
+                        return;
+                    }
+                case 7:
+                    Logging.WriteLog("Solar Raid Selected");
+                    if (VersionContent == 1) //Release
+                    {
+                        SeasonName = "Solar Raid";
+                        GetALL(SeasonName);
+                        return;
+                    }
+                    else
+                    {
+                        SeasonName = "Snow Brawl";
                         GetALL(SeasonName);
                         return;
                     }
