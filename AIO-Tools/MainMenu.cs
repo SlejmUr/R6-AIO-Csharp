@@ -298,7 +298,7 @@ namespace AIO_Tools
         }
         private void ChangeSelectionY8(object sender, EventArgs e)
         {
-            SeasonContent = 7;
+            SeasonContent = 8;
             string S1txt, S1IMG,
                 S2txt, S2IMG,
                 S3txt, S3IMG,
