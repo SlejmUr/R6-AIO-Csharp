@@ -24,8 +24,8 @@ namespace AIO_Tools.Classes
             if (!Directory.Exists("AIO_Data\\DepotDownloader"))
             {
                 //Download
-                string Download = "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.6/depotdownloader-2.4.6.zip";
-                string zipname = "depotdownloader-2.4.6.zip";
+                string Download = "https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.7/depotdownloader-2.4.7.zip";
+                string zipname = "depotdownloader-2.4.7.zip";
                 string extractPath = "AIO_Data\\DepotDownloader";
                 WebClient myWebClient = new WebClient();
                 myWebClient.DownloadFile(Download, zipname);
@@ -41,7 +41,7 @@ namespace AIO_Tools.Classes
             if (!Directory.Exists("AIO_Data\\Plazas"))
             {
                 //Download
-                string Download = "https://slejmur.keybase.pub/Plazas.zip?dl=1";
+                string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/blob/main/Plazas.zip?raw=true";
                 string zipname = "Plazas.zip";
                 //string extractPath = "Plazas";
                 string extractPath = Directory.GetCurrentDirectory() + "\\AIO_Data\\Plazas";
@@ -60,7 +60,7 @@ namespace AIO_Tools.Classes
             if (!Directory.Exists("AIO_Data\\StreamingInstalls"))
             {
                 //Download 
-                string Download = "https://slejmur.keybase.pub/StreamingInstalls.zip?dl=1";
+                string Download = "https://github.com/SlejmUr/R6-AIOTool-Csharp/blob/main/StreamingInstalls.zip?raw=true";
                 string zipname = "StreamingInstalls.zip";
                 //string extractPath = "Plazas";
                 string extractPath = Directory.GetCurrentDirectory() + "\\AIO_Data";
